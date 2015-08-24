@@ -1,0 +1,491 @@
+﻿@using Microsoft.AspNet.Identity
+@if (User.Identity.IsAuthenticated == true)
+{
+    ViewBag.Title = "Crear Sitio UPME";
+
+<div id="map"></div>
+<div id="info-pane" class="leaflet-bar"></div>
+
+<div class="col-sm-2 col-md-2" id="panel_formulario" style="max-width:350px;min-width:320px;">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Sitio UPME a Energizar.</h3>
+        </div>
+        <div class="panel-body">
+            <div id="FormCPPgn0">
+                <form style="text-align: center;">
+                    <h5>Seleccione la opción de gestión de Sitios Upme</h5>
+                    <div class="btn-group-vertical" role="group" >
+                        <button type="button" class="btn btn-default " id="CrearCP"><h6> CREAR  <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span> </h6></button>
+                        <button type="button" class="btn btn-default" id="EliminarCP"><h6> MIS SITIOS UPME <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span></h6></button>
+                        <button type="button" class="btn btn-default" id="ActualizarVV"><h6> ACTUALIZAR VIVIENDAS <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span></h6></button>
+                        <button type="button" class="btn btn-default" id="MisActualizarVV" ><h6> MIS ACTUALIZACIONES <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span></h6></button>
+                    </div>
+                </form>             
+            </div>
+            <div id="FormCPPgn1" class="hide">
+                <button class="btn btn-danger pull-right btn-xs " type="button" onclick="CancelarCrear()">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Inicio
+                </button>
+                <ul class="nav nav-wizard">
+                    <li class="active"><a href="#">0</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                </ul>
+                <form style="text-align: center;">
+                    <h5>Usted deberá seguir los siguientes pasos para crear un <strong>Sitio Upme</strong></h5>
+                    <ul class="list-group">
+                        <li class="list-group-item"><h6>1. Ubicar el municipio al que pertenece. </h6></li>
+                        <li class="list-group-item"><h6>2. Definir la ubicacion. </h6></li>
+                        <li class="list-group-item"><h6>3. Diligenciar la información correspondiente.</h6></li>
+                        <li class="list-group-item"><h6>4. Esperar la oficializacion por parte de la UPME.</h6></li>
+                    </ul>
+                    <h5>Oprima en siguiente para iniciar</h5>
+                </form>
+                <hr />
+                <nav>
+                    <ul class="pager">
+                        
+                        <li class="next" id="Pgn1Sig"><a href="#">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="FormCPPgn2" class="hide">
+                <button class="btn btn-danger pull-right btn-xs " type="button" onclick="CancelarCrear()">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Inicio
+                </button>
+                <ul class="nav nav-wizard">
+                    <li><a href="#">0</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                </ul>
+                <form style="text-align: center;">
+                    <h5>Ingrese el nombre del municipio al que pertenece el<strong> Sitio Upme</strong></h5>
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" id="city" placeholder="Nombre Municipio">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" id="BtnBusquedaMun" disabled>
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div><!-- /input-group -->
+                    <br />
+                    <div id="TextValCP">
+                        <h6>Verifique que el Sitio Upme no exista en la lista del panel derecho</h6>
+                        <h5>¿Existe el Sitio Upme?</h5>
+                        <input type="radio" name="ExisteCP" id="existSi" value="SI"><label for="existSi">SI  -</label>
+                        <input type="radio" name="ExisteCP" id="existNo" value="NO"><label for="existNo">  NO</label>
+                    </div>
+                </form>
+                <hr />
+                <nav>
+                    <ul class="pager">
+                        <li class="previous" id="Pgn2Ant"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+                        <li class="next disabled" id="Pgn2Sig"><a href="#">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="FormCPPgn3" class="hide">
+                <button class="btn btn-danger pull-right btn-xs " type="button" onclick="CancelarCrear()">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Inicio
+                </button>
+                <ul class="nav nav-wizard">
+                    <li><a href="#">0</a></li>
+                    <li><a href="#">1</a></li>
+                    <li class="active"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                </ul>
+                <form class="form-horizontal" role="form" style="text-align: center;">
+
+                    <h5>Tiene dos opciones para definir la ubicacion del<strong> Sitio Upme</strong>?</h5>
+
+                    <ul class="list-group">
+                        <li class="list-group-item"><h6>1. Ingresar las cordenadas en los campos y en "Ir Ubicacion"</h6></li>
+                        <li class="list-group-item"><h6>2. Realizar Click el mapa en la ubicacion del Sitio Upme</h6></li>
+                    </ul>
+
+                    
+                        <div class="col-xs-6">
+                            <label for="InpLongitudCP">Longitud</label>
+                            <input type="text" class="form-control input-sm" id="InpLongitudCP" placeholder="-76,568090" onkeypress="if (event.keyCode < 44 || (event.keyCode >45 && event.keyCode < 48) || event.keyCode > 57) event.returnValue = false;">
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="InpLatitudCP">Latitud</label>
+                            <input type="text" class="form-control input-sm" id="InpLatitudCP" placeholder="3,411297" onkeypress="if (event.keyCode < 44 || (event.keyCode > 45 && event.keyCode < 48) || event.keyCode > 57) event.returnValue = false;">
+                        </div>
+                            <p class="text-success" id="PValidaUbi">__</p>
+                            <button class="btn btn-default" type="button" id="BtnValidacionCoord" onclick="FunValidarUbi()">
+                                <span class="glyphicon glyphicon-map-marker"></span> Ir ubicación.
+                            </button>
+                        
+                </form>
+                <hr />
+                <nav>
+                    <ul class="pager">
+                        <li class="previous" id="Pgn3Ant"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+                        <li class="next disabled" id="Pgn3Sig"><a href="#">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="FormCPPgn4" class="hide">
+                <button class="btn btn-danger pull-right btn-xs " type="button" onclick="CancelarCrear()">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Inicio
+                </button>
+                <ul class="nav nav-wizard">
+                    <li><a href="#">0</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li class="active"><a href="#">3</a></li>
+                </ul>
+                <form style="max-height:280px;overflow:scroll;">
+                    <div class="form-group">
+                        <label for="InpNomCP">Ingrese el nombre Sitio Upme:</label>
+                        <input type="text" class="form-control" id="InpNomCP" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="SectTipo">Seleccione Tipo Zona:</label>
+                        <select class="form-control" id="SectTipo">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <h5><center>Vigencia de información de viviendas</center></h5>
+                                <div class="col-xs-6">
+                                    <label for="SecVigenciaAnio">Año</label>
+                                    <select class="form-control" id="SecVigenciaAnio">
+                                        <option value="" selected></option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6">
+                                    <label for="SecVigenciaMes">Mes</label>
+                                    <select class="form-control" id="SecVigenciaMes">
+                                        <option value="" selected></option>
+                                        <option value="01">1</option>
+                                        <option value="02">2</option>
+                                        <option value="03">3</option>
+                                        <option value="04">4</option>
+                                        <option value="05">5</option>
+                                        <option value="06">6</option>
+                                        <option value="07">7</option>
+                                        <option value="08">8</option>
+                                        <option value="09">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                               </div>
+                               </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="SectClase">Seleccione la Clase :</label>
+                                <select class="form-control" id="SectClase">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div class="form-group hide" id="FormInpViviendasU">
+                                <label for="InpViviendasU">Ingrese el total de viviendas URBANAS:</label>
+                                <input type="text" class="form-control" id="InpViviendasU"  onkeypress="NumPositivo(event)"  maxlength="6"   placeholder="">
+                            </div>
+
+                            <div class="form-group hide" id="FormInpViviendasSSU">
+                                <label for="InpViviendasSSU">Ingrese el total de viviendas sin servicio URBANAS:</label>
+                                <input type="text" class="form-control" id="InpViviendasSSU"  onkeypress="NumPositivo(event)"  maxlength="6"   placeholder="">
+                            </div>
+                            <div class="form-group hide" id="FormInpViviendasR">
+                                <label for="InpViviendasR">Ingrese el total de viviendas RURAL:</label>
+                                <input type="text" class="form-control" id="InpViviendasR"  onkeypress="NumPositivo(event)"  maxlength="6"  placeholder="">
+                            </div>
+                            <div class="form-group hide" id="FormInpViviendasSSR">
+                                <label for="InpViviendasSSR">Ingrese el total de viviendas sin servicio RURAL:</label>
+                                <input type="text" class="form-control" id="InpViviendasSSR"  onkeypress="NumPositivo(event)"  maxlength="6"  placeholder=" ">
+                            </div>
+                            <div class="form-group">
+                                <label for="InpObservacion">Observacion:</label>
+                                <textarea class="form-control" id="InpObservacion" placeholder=""></textarea>
+                            </div>
+                </form>
+                <hr />
+                <nav>
+                    <ul class="pager">
+                        <li class="previous" id="Pgn4Ant"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+                        <li class="next" id="Pgn4Sig"><a href="#"><span class="glyphicon glyphicon-ok"></span> Finalizar <span aria-hidden="true">&rarr;</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="FormCPPgn5" class="hide">
+                <button class="btn btn-danger pull-right btn-xs " type="button" onclick="CancelarCrear()">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Inicio
+                </button>
+                <center>
+                    <h3><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></h3>
+                    <h4>Sitio Upme creado con exito</h4>
+                    <h5>Por favor espere la oficializacion por parte de la UPME para terminar el proceso</h5>
+
+                    <button class="btn btn-success" type="button" id="BtnreiniciarCreacion">
+                        <span class="glyphicon glyphicon-ok"></span> Volver al inicio
+                    </button>
+                </center>
+            </div>
+
+            <div id="FormCPPgn1Eli" class="hide">
+                    <button class="btn btn-danger pull-right btn-xs " type="button" onclick="CancelarEliminacion()">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Inicio
+                    </button>
+                    <center>
+                        <h5> <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>  Sitios Upme sin aprobar</h5>
+
+                    </center>
+                    <div class="input-group custom-search-form">
+                        <input type="search" id="container-search-CPELI" value="" class="form-control" placeholder="Busca el Sitio Upme...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" id="BtnBusquedaMunEli" disabled>
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                    <div id="DivListaCpEdit">
+                    </div>
+                   
+            </div>
+
+            <div id="FormCPPgn1ActVV" class="hide">
+                <button class="btn btn-danger pull-right btn-xs " type="button" onclick="CancelarCrear()">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Inicio
+                </button>
+                <br />
+                <form style="text-align: center;">
+                    <h5>Ingrese el nombre del <b>municipio</b> en el cual se encuentre el sitio upme con las viviendas a actualizar</h5>
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" id="cityVV" placeholder="Nombre Municipio">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" id="BtnBusquedaMunVV" disabled>
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <hr />
+               
+            </div>
+            <div id="FormCPPgn2ActVV" class="hide">
+                <button class="btn btn-danger pull-right btn-xs " type="button" onclick="CancelarCrear()">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Inicio
+                </button>
+                <center>
+                    <h5> <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Actualizaciones sin aprobar </h5>
+                </center>
+                <div class="input-group custom-search-form">
+                    <input type="search" id="container-search-CPACT" value="" class="form-control" placeholder="Busca el actualizacion...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" id="BtnBusquedaMunAct" disabled>
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+                <div id="DivListaCpAct">
+                </div>
+            </div>
+            <div id="CargaCluster">
+                <hr />
+                <center>
+                    <i class="fa fa-spinner fa-pulse fa-2x  fa-spin"></i> Cargando Agrupaciones de Sitios Upme
+                </center>
+            </div>
+        </div>
+        <div class="panel-footer">
+            
+            <div class="row">
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="col-sm-2 col-md-2" id="panel_centros_poblados" style="max-width:350px;min-width:320px;">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Lista De Sitios UPME a Energizar</h3>
+            </div>
+            <div class="panel-body">
+                <center>
+                    <h5><span id="label_municipio"></span>, <span id="label_departamento"></span></h5>
+                    <hr />
+                    <h5>VIVIENDAS:</h5>
+                    <h6><small>Total:</small> <b><span id="label_totalviviendas"></span></b><small>, Sin Servicio:</small> <b><span id="label_viviendasSS"></span></b><small>, Con Servicio:</small> <b><span id="label_viviendasCS"></span></b></h6>
+
+                </center>
+                <div class="input-group custom-search-form">
+                    <input type="search" id="container-search" value="" class="form-control" placeholder="Buscar el Sitio Upme...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" id="BtnBusquedaMunEli" disabled>
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+                <div id="DivListaCp">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="col-sm-2 col-md-2" id="panel_edicion" style="max-width:350px;min-width:320px;">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Edicion Data de Sitio Upme.</h3>
+        </div>
+        <div class="panel-body">
+            <form style="max-height:280px;overflow:scroll;">
+                <div class="form-group">
+                    <label for="EditInpNomCP">Ingrese el nombre Sitio Upme:</label>
+                    <input type="text" class="form-control" id="EditInpNomCP" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="EditSectTipo">Seleccione la Tipo Zona:</label>
+                    <select class="form-control" id="EditSectTipo">
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <h5><center>Vigencia de información de viviendas</center></h5>
+                            <div class="col-xs-6">
+                                <label for="EditSecVigenciaAnio">Año</label>
+                                <select class="form-control" id="EditSecVigenciaAnio">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="EditSecVigenciaMes">Mes</label>
+                                <select class="form-control" id="EditSecVigenciaMes">
+                                    <option value="" selected></option>
+                                    <option value="01">1</option>
+                                    <option value="02">2</option>
+                                    <option value="03">3</option>
+                                    <option value="04">4</option>
+                                    <option value="05">5</option>
+                                    <option value="06">6</option>
+                                    <option value="07">7</option>
+                                    <option value="08">8</option>
+                                    <option value="09">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="EditSectClase">Seleccione la Clase Zona:</label>
+                    <select class="form-control" id="EditSectClase">
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="form-group hide" id="EditFormInpViviendasU">
+                    <label for="EditInpViviendasU">Ingrese el total de viviendas URBANAS:</label>
+                    <input type="text" class="form-control" id="EditInpViviendasU"  onkeypress="NumPositivo(event)"  maxlength="6"  placeholder="">
+                </div>
+                
+                <div class="form-group hide" id="EditFormInpViviendasSSU">
+                    <label for="EditInpViviendasSSU">Ingrese el total de viviendas sin servicio URBANAS:</label>
+                    <input type="text" class="form-control" id="EditInpViviendasSSU"  onkeypress="NumPositivo(event)"  maxlength="6"  placeholder="">
+                </div>
+                <div class="form-group hide" id="EditFormInpViviendasR">
+                    <label for="EditInpViviendasR">Ingrese el total de viviendas RURAL:</label>
+                    <input type="text" class="form-control" id="EditInpViviendasR"  onkeypress="NumPositivo(event)"  maxlength="6"  placeholder="">
+                </div>
+                <div class="form-group hide" id="EditFormInpViviendasSSR">
+                    <label for="EditInpViviendasSSR">Ingrese el total de viviendas sin servicio RURAL:</label>
+                    <input type="text" class="form-control" id="EditInpViviendasSSR"  onkeypress="NumPositivo(event)"  maxlength="6"  placeholder=" ">
+                </div>
+                <div class="form-group">
+                    <label for="EditInpObservacion">Observacion:</label>
+                    <textarea class="form-control" id="EditInpObservacion" placeholder=""></textarea>
+                </div>
+            </form>
+            <br />
+            <button class="btn btn-info pull-right " type="button" onclick="SaveFeature()">
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Guardar
+            </button>
+            <button class="btn btn-danger pull-left " type="button" onclick="CancelEditFeature()">
+                <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Cancelar
+            </button>
+        </div>
+    </div>
+</div>
+
+
+    <div id="carousel-panel-generic" class="col-sm-3 col-md-3">
+        <div id="myCarousel" class="carousel slide">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+            </ol>
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="row-fluid">
+                        <div class="col-sm-6 col-md-6" id="BaseESRIStreets" value="Streets">
+                            <a href="#" class="thumbnail">
+                                <img src="~/images/baselayers/calles.PNG" style="max-width:100%;">
+                                <div class="carousel-caption"><center><h6>Calles</h6></center></div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-6" id="BaseESRISatellite" value="Imagery">
+                            <a href="#" class="thumbnail">
+                                <img src="~/images/baselayers/satelite.PNG" style="max-width:100%;">
+                                <div class="carousel-caption"><center><h6 style="color:rgba(255, 255, 255,1)">Satelite</h6></center></div>
+                            </a>
+                        </div>
+                    </div><!--/row-fluid-->
+                </div><!--/item-->
+                <div class="item">
+                    <div class="row-fluid">
+                        <div class="col-sm-6 col-md-6" id="BaseESRITopo" value="Topographic">
+                            <a href="#" class="thumbnail">
+                                <img src="~/images/baselayers/topografic.PNG" style="max-width:100%;">
+                                <div class="carousel-caption"><center><h6>Topográfico</h6></center></div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-md-6" id="BaseOSM" value="OSM">
+                            <a href="#" class="thumbnail">
+                                <img src="~/images/baselayers/OSM.PNG" style="max-width:100%;">
+                                <div class="carousel-caption"><center><h6>OSM</h6></center></div>
+                            </a>
+                        </div>
+
+                    </div><!--/row-fluid-->
+                </div><!--/item-->
+            </div><!--/carousel-inner-->
+
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div><!--/myCarousel-->
+    </div>
+        <div class='mouse-position'>
+            <b id='mousemove'><b />
+        </div>
+        @Scripts.Render("~/bundles/appMapGlobal")
+        @Scripts.Render("~/bundles/appMap")
+}
+else
+{
+<script>
+        var direccion='@Url.Action("Index", "Home")';
+        
+        location.href = direccion;
+        
+</script>
+
+}
+

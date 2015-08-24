@@ -1,0 +1,633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{54D70CFE-A660-41DC-AF82-9B7CE676E623}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVCupme</RootNamespace>
+    <AssemblyName>MVCupme</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <IncludeAppPool>true</IncludeAppPool>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.1.021\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Data">
+      <HintPath>..\packages\Simple.Data.Core.0.19.0.0\lib\net40\Simple.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Data.Ado">
+      <HintPath>..\packages\Simple.Data.Ado.0.19.0.0\lib\net40\Simple.Data.Ado.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Data.Oracle.ManagedDataAccess">
+      <HintPath>..\packages\Simple.Data.Oracle.ManagedDataAccess.0.19.0.0\lib\net40\Simple.Data.Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\GlobalVariables.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HelloWorldController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ModelUsr.Context.cs" />
+    <Compile Include="Models\ModelUsr.cs" />
+    <Compile Include="Models\ModelUsr.designer.cs">
+      <DependentUpon>ModelUsr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MUB_GENERALES.cs">
+      <DependentUpon>ModelUsr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MUB_GRUPOS.cs">
+      <DependentUpon>ModelUsr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MUB_MODULOS.cs">
+      <DependentUpon>ModelUsr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MUB_ORGANIZACIONES.cs">
+      <DependentUpon>ModelUsr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MUB_PRIVILEGIOS.cs">
+      <DependentUpon>ModelUsr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MUB_ROL.cs">
+      <DependentUpon>ModelUsr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MUB_ROL_PRIVILEGIOS.cs">
+      <DependentUpon>ModelUsr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MUB_UNIDADES.cs">
+      <DependentUpon>ModelUsr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MUB_USUARIOS.cs">
+      <DependentUpon>ModelUsr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MUB_USUARIOS_ROLES.cs">
+      <DependentUpon>ModelUsr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\bootstrap-nav-wizard.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\jquery-ui.css" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\prettyPhoto.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="images\baselayers\calles.PNG" />
+    <Content Include="images\baselayers\OSM.PNG" />
+    <Content Include="images\baselayers\satelite.PNG" />
+    <Content Include="images\baselayers\topografic.PNG" />
+    <Content Include="images\faviconupme.ico" />
+    <Content Include="images\leyend\Dane.png" />
+    <Content Include="images\leyend\municipio.png" />
+    <Content Include="images\leyend\pto_vive_digital.png" />
+    <Content Include="images\leyend\SinAprobar.png" />
+    <Content Include="images\leyend\Upme.png" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\logo UPME.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\portfolio\thumb\en_infraestructura.jpg" />
+    <Content Include="images\portfolio\thumb\en_radiacion_solar.jpg" />
+    <Content Include="images\portfolio\thumb\hi_infraestructura-petrolera.jpg" />
+    <Content Include="images\portfolio\thumb\hi_tierras_anh_viso.jpg" />
+    <Content Include="images\portfolio\thumb\STN_2013-2027.png" />
+    <Content Include="images\portfolio\thumb\UPME_EN_Brillo_solar.png" />
+    <Content Include="images\portfolio\thumb\UPME_EN_Comparativo_Fechas.png" />
+    <Content Include="images\portfolio\thumb\UPME_EN_Distribución.png" />
+    <Content Include="images\portfolio\thumb\UPME_EN_Embalses.png" />
+    <Content Include="images\portfolio\thumb\UPME_EN_Embalses_Nivel.png" />
+    <Content Include="images\portfolio\thumb\UPME_EN_Fondos.png" />
+    <Content Include="images\portfolio\thumb\UPME_EN_Ozono.png" />
+    <Content Include="images\portfolio\thumb\UPME_EN_Relaciones_comerciales.png" />
+    <Content Include="images\portfolio\thumb\UPME_EN_Viento_Energía_50.png" />
+    <Content Include="images\portfolio\thumb\UPME_HI_ANH_Historico.png" />
+    <Content Include="images\portfolio\thumb\UPME_MI_Distritos.png" />
+    <Content Include="images\portfolio\thumb\UPME_MI_minas.png" />
+    <Content Include="images\portfolio\thumb\UPME_MI_Titulación.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="images\prettyPhoto\default\loader.gif" />
+    <Content Include="images\prettyPhoto\default\sprite.png" />
+    <Content Include="images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="images\slider\bg1.jpg" />
+    <Content Include="images\slider\bg2.jpg" />
+    <Content Include="images\slider\bg2.png" />
+    <Content Include="images\slider\bg3.jpg" />
+    <Content Include="images\slider\bg4.jpg" />
+    <Content Include="Scripts\app\Globalconfig.js" />
+    <Content Include="Scripts\app\MainIndex.js" />
+    <Content Include="Scripts\app\Usuarios.js" />
+    <Content Include="Scripts\app\MainValidar.js" />
+    <Content Include="Scripts\app\MainNav.js" />
+    <Content Include="Scripts\app\MainMap.js" />
+    <Content Include="Scripts\libs\BootstrapDialog\css\bootstrap-dialog.css" />
+    <Content Include="Scripts\libs\BootstrapDialog\css\bootstrap-dialog.min.css" />
+    <Content Include="Scripts\libs\BootstrapDialog\js\bootstrap-dialog.js" />
+    <Content Include="Scripts\libs\BootstrapDialog\js\bootstrap-dialog.min.js" />
+    <Content Include="Scripts\libs\label\images\death.png" />
+    <Content Include="Scripts\libs\label\leaflet.label-src.js" />
+    <Content Include="Scripts\libs\label\leaflet.label.css" />
+    <Content Include="Scripts\libs\label\leaflet.label.js" />
+    <Content Include="Scripts\libs\minimap\Control.MiniMap.min.css" />
+    <Content Include="Scripts\libs\minimap\Control.MiniMap.min.js" />
+    <Content Include="Scripts\libs\minimap\images\toggle.png" />
+    <Content Include="Scripts\libs\minimap\images\toggle.svg" />
+    <Content Include="Scripts\libs\esri-leaflet\esri-leaflet-clustered-feature-layer.js" />
+    <Content Include="Scripts\libs\leaflet\easy-button.js" />
+    <Content Include="Scripts\libs\moment\moment.min.js" />
+    <Content Include="Scripts\app\Notificaciones.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Models\ModelUsr.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelUsr.Context2.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\ModelUsr.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelUsr2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelUsr.edmx.diagram">
+      <DependentUpon>ModelUsr.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ModelUsr.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelUsr2.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\UPME.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\libs\bootstrap-3.3.1\dist\css\bootstrap-theme.css" />
+    <Content Include="Scripts\libs\bootstrap-3.3.1\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\libs\bootstrap-3.3.1\dist\css\bootstrap.css" />
+    <Content Include="Scripts\libs\bootstrap-3.3.1\dist\css\bootstrap.min.css" />
+    <Content Include="Scripts\libs\bootstrap-3.3.1\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\libs\bootstrap-3.3.1\dist\js\bootstrap.js" />
+    <Content Include="Scripts\libs\bootstrap-3.3.1\dist\js\bootstrap.min.js" />
+    <Content Include="Scripts\libs\bootstrap-3.3.1\dist\js\npm.js" />
+    <Content Include="Scripts\libs\bootstrap-switch\css\bootstrap2\bootstrap-switch.css" />
+    <Content Include="Scripts\libs\bootstrap-switch\css\bootstrap2\bootstrap-switch.min.css" />
+    <Content Include="Scripts\libs\bootstrap-switch\css\bootstrap3\bootstrap-switch.css" />
+    <Content Include="Scripts\libs\bootstrap-switch\css\bootstrap3\bootstrap-switch.min.css" />
+    <Content Include="Scripts\libs\bootstrap-switch\js\bootstrap-switch.js" />
+    <Content Include="Scripts\libs\bootstrap-switch\js\bootstrap-switch.min.js" />
+    <Content Include="Scripts\libs\cluster\leaflet.markercluster-src.js" />
+    <Content Include="Scripts\libs\cluster\leaflet.markercluster.js" />
+    <Content Include="Scripts\libs\cluster\MarkerCluster.css" />
+    <Content Include="Scripts\libs\cluster\MarkerCluster.Default.css" />
+    <Content Include="Scripts\libs\searchable\jquery.searchable-1.0.0.min.js" />
+    <Content Include="Scripts\libs\searchable\jquery.searchable-1.1.0.min.js" />
+    <Content Include="Scripts\libs\searchable\jquery.searchable-ie-1.1.0.min.js" />
+    <Content Include="Scripts\libs\growl\bootstrap-growl.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\css\bootstrap-select.css" />
+    <Content Include="Scripts\libs\select-bootstrap\css\bootstrap-select.min.css" />
+    <Content Include="Scripts\libs\select-bootstrap\js\bootstrap-select.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\bootstrap-select.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-cs_CZ.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-de_DE.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-de_DE.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-en_US.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-en_US.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-es_CL.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-es_CL.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-eu.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-eu.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-fr_FR.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-fr_FR.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-it_IT.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-it_IT.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-nl_NL.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-nl_NL.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-pl_PL.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-pl_PL.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-pt_BR.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-pt_BR.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-ro_RO.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-ro_RO.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-ru_RU.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-ru_RU.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-ua_UA.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-ua_UA.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-zh_CN.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-zh_CN.min.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-zh_TW.js" />
+    <Content Include="Scripts\libs\select-bootstrap\js\i18n\defaults-zh_TW.min.js" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\basemaps\esri-leaflet-basemaps-src.js" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\basemaps\esri-leaflet-basemaps.js" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\core\esri-leaflet-core-src.js" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\core\esri-leaflet-core.js" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\feature-layer\esri-leaflet-feature-layer-src.js" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\feature-layer\esri-leaflet-feature-layer.js" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\image-service\esri-leaflet-image-service-src.js" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\image-service\esri-leaflet-image-service.js" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\map-service\esri-leaflet-map-service-src.js" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\map-service\esri-leaflet-map-service.js" />
+    <Content Include="Scripts\libs\esri-leaflet\esri-leaflet-src.js" />
+    <Content Include="Scripts\libs\esri-leaflet\esri-leaflet.js" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\css\font-awesome.css" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\css\font-awesome.min.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Scripts\libs\jquery\jquery-ui.js" />
+    <Content Include="Scripts\libs\jquery\jquery.min.js" />
+    <Content Include="Scripts\libs\leaflet\images\layers-2x.png" />
+    <Content Include="Scripts\libs\leaflet\images\layers.png" />
+    <Content Include="Scripts\libs\leaflet\images\marker-icon-2x.png" />
+    <Content Include="Scripts\libs\leaflet\images\marker-icon.png" />
+    <Content Include="Scripts\libs\leaflet\images\marker-shadow.png" />
+    <Content Include="Scripts\libs\leaflet\leaflet-src.js" />
+    <Content Include="Scripts\libs\leaflet\leaflet.css" />
+    <Content Include="Scripts\libs\leaflet\leaflet.js" />
+    <Content Include="Scripts\libs\leaflet_markers\images\markers-matte%402x.png" />
+    <Content Include="Scripts\libs\leaflet_markers\images\markers-matte.png" />
+    <Content Include="Scripts\libs\leaflet_markers\images\markers-plain.png" />
+    <Content Include="Scripts\libs\leaflet_markers\images\markers-shadow%402x.png" />
+    <Content Include="Scripts\libs\leaflet_markers\images\markers-shadow.png" />
+    <Content Include="Scripts\libs\leaflet_markers\images\markers-soft%402x.png" />
+    <Content Include="Scripts\libs\leaflet_markers\images\markers-soft.png" />
+    <Content Include="Scripts\libs\leaflet_markers\leaflet.awesome-markers.css" />
+    <Content Include="Scripts\libs\leaflet_markers\leaflet.awesome-markers.js" />
+    <Content Include="Scripts\libs\leaflet_markers\leaflet.awesome-markers.min.js" />
+    <Content Include="Scripts\libs\Control.Loading\Control.Loading.css" />
+    <Content Include="Scripts\libs\Control.Loading\Control.Loading.js" />
+    <Content Include="Scripts\libs\turfjs\turf.min.js" />
+    <Content Include="Scripts\libs\waitingDialog\waitingDialog.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Validar.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\HelloWorld\index.cshtml" />
+    <Content Include="Views\HelloWorld\Welcome.cshtml" />
+    <Content Include="Scripts\libs\bootstrap-3.3.1\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\libs\bootstrap-3.3.1\dist\css\bootstrap.css.map" />
+    <Content Include="Scripts\libs\bootstrap-3.3.1\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\libs\bootstrap-3.3.1\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\libs\bootstrap-3.3.1\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\basemaps\esri-leaflet-basemaps-src.js.map" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\basemaps\esri-leaflet-basemaps.js.map" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\core\esri-leaflet-core-src.js.map" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\core\esri-leaflet-core.js.map" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\feature-layer\esri-leaflet-feature-layer-src.js.map" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\feature-layer\esri-leaflet-feature-layer.js.map" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\image-service\esri-leaflet-image-service-src.js.map" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\image-service\esri-leaflet-image-service.js.map" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\map-service\esri-leaflet-map-service-src.js.map" />
+    <Content Include="Scripts\libs\esri-leaflet\builds\map-service\esri-leaflet-map-service.js.map" />
+    <Content Include="Scripts\libs\esri-leaflet\esri-leaflet-src.js.map" />
+    <Content Include="Scripts\libs\esri-leaflet\esri-leaflet.js.map" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\less\bordered-pulled.less" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\less\core.less" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\less\fixed-width.less" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\less\font-awesome.less" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\less\icons.less" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\less\larger.less" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\less\list.less" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\less\mixins.less" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\less\path.less" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\less\rotated-flipped.less" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\less\spinning.less" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\less\stacked.less" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\less\variables.less" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\scss\font-awesome.scss" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\scss\_bordered-pulled.scss" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\scss\_core.scss" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\scss\_fixed-width.scss" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\scss\_icons.scss" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\scss\_larger.scss" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\scss\_list.scss" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\scss\_mixins.scss" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\scss\_path.scss" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\scss\_rotated-flipped.scss" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\scss\_spinning.scss" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\scss\_stacked.scss" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\scss\_variables.scss" />
+    <Content Include="Views\Home\Crear.cshtml" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Scripts\libs\font-awesome-4.2.0\fonts\FontAwesome.otf" />
+    <Content Include="Scripts\libs\select-bootstrap\css\bootstrap-select.css.map" />
+    <Content Include="Scripts\libs\select-bootstrap\js\bootstrap-select.js.map" />
+    <Content Include="Scripts\libs\BootstrapDialog\less\bootstrap-dialog.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AspNet.Identity.OracleProvider\AspNet.Identity.OracleProvider.csproj">
+      <Project>{b6536b7f-f5c9-4362-847f-b6f8d5d5f5db}</Project>
+      <Name>AspNet.Identity.OracleProvider</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63944</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/SitiosUpme/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost/SitiosUpme/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Habilite la restauración del paquete NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "Pagina de inicio";
+}
+
+<div id="map"></div>
+<div id="info-pane" class="leaflet-bar"></div>
+
+<div class="col-sm-2 col-md-2" id="panel_formulario" style="max-width:350px;min-width:300px;">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Sitios UPME a Energizar.</h3>
+        </div>
+        <div class="panel-body">
+           <div id="FormCPPgn0" >
+                <form style="text-align: center;">
+                    <h5>Ingrese el nombre del municipio al que pertenece el<strong> Sitio UPME a Energizar</strong></h5>
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" id="city" placeholder="Nombre Municipio">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" id="BtnBusquedaMun" disabled>
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button" id="BtnLimpiarMun" >
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div><!-- /input-group -->
+                </form>
+            </div>
+            <div id="CargaCluster">
+                <hr />
+                <center>
+                    <i class="fa fa-spinner fa-pulse fa-2x  fa-spin"></i> Cargando Agrupaciones de Sitios Upme
+                </center>
+            </div>
+        </div>
+        <div class="panel-footer">
+
+            <div class="row">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-2 col-md-2" id="panel_centros_poblados" style="max-width:350px;min-width:300px;">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Lista De Sitios Upme </h3>
+        </div>
+        <div class="panel-body">
+            <center>
+                <h5><span id="label_municipio"></span>, <span id="label_departamento"></span></h5>
+                <hr />
+                <h5>VIVIENDAS:</h5>
+                <h6><small>Total:</small> <b><span id="label_totalviviendas"></span></b><small>, Sin Servicio:</small> <b><span id="label_viviendasSS"></span></b><small>, Con Servicio:</small> <b><span id="label_viviendasCS"></span></b></h6>
+                
+            </center>
+            <div class="input-group custom-search-form">
+                <input type="search" id="container-search" value="" class="form-control" placeholder="Buscar el Sitio Upme...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" id="BtnBusquedaMunEli" disabled>
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+            <div id="DivListaCp">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="carousel-panel-generic" class="col-sm-3 col-md-3">
+    <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="row-fluid">
+                    <div class="col-sm-6 col-md-6" id="BaseESRIStreets" value="Streets">
+                        <a href="#" class="thumbnail">
+                            <img src="~/images/baselayers/calles.PNG" style="max-width:100%;">
+                            <div class="carousel-caption"><center><h6>Calles</h6></center></div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-6" id="BaseESRISatellite" value="Imagery">
+                        <a href="#" class="thumbnail">
+                            <img src="~/images/baselayers/satelite.PNG" style="max-width:100%;">
+                            <div class="carousel-caption"><center><h6 style="color:rgba(255, 255, 255,1)">Satelite</h6></center></div>
+                        </a>
+                    </div>
+                </div><!--/row-fluid-->
+            </div><!--/item-->
+            <div class="item">
+                <div class="row-fluid">
+                    <div class="col-sm-6 col-md-6" id="BaseESRITopo" value="Topographic">
+                        <a href="#" class="thumbnail">
+                            <img src="~/images/baselayers/topografic.PNG" style="max-width:100%;">
+                            <div class="carousel-caption"><center><h6>Topográfico</h6></center></div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-6" id="BaseOSM" value="OSM">
+                        <a href="#" class="thumbnail">
+                            <img src="~/images/baselayers/OSM.PNG" style="max-width:100%;">
+                            <div class="carousel-caption"><center><h6>OSM</h6></center></div>
+                        </a>
+                    </div>
+
+                </div><!--/row-fluid-->
+            </div><!--/item-->
+        </div><!--/carousel-inner-->
+
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div><!--/myCarousel-->
+</div>
+<div class='mouse-position'>
+    <b id='mousemove'><b />
+</div>
+@Scripts.Render("~/bundles/appMapGlobal")
+@Scripts.Render("~/bundles/appMap")

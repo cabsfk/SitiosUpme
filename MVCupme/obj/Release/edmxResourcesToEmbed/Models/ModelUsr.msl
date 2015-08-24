@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MVCupmeStoreContainer" CdmEntityContainer="CxUsr">
+    <EntitySetMapping Name="MUB_ORGANIZACIONES">
+      <EntityTypeMapping TypeName="MVCupme.MUB_ORGANIZACIONES">
+        <MappingFragment StoreEntitySet="MUB_ORGANIZACIONES">
+          <ScalarProperty Name="ID_ORGANIZACION" ColumnName="ID_ORGANIZACION" />
+          <ScalarProperty Name="DP_UPME" ColumnName="DP_UPME" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="ID_AREA_DISTRIBUCION" ColumnName="ID_AREA_DISTRIBUCION" />
+          <ScalarProperty Name="MP_UPME" ColumnName="MP_UPME" />
+          <ScalarProperty Name="SIGLA" ColumnName="SIGLA" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="ID_TIPO_ORGANIZACION" ColumnName="ID_TIPO_ORGANIZACION" />
+          <ScalarProperty Name="REPRESENTANTE" ColumnName="REPRESENTANTE" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="RAZON_SOCIAL" ColumnName="RAZON_SOCIAL" />
+          <ScalarProperty Name="NIT" ColumnName="NIT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUB_GENERALES">
+      <EntityTypeMapping TypeName="MVCupme.MUB_GENERALES">
+        <MappingFragment StoreEntitySet="MUB_GENERALES">
+          <ScalarProperty Name="ID_PARAMETROS" ColumnName="ID_PARAMETROS" />
+          <ScalarProperty Name="ID_MODULOS" ColumnName="ID_MODULOS" />
+          <ScalarProperty Name="ID_GRUPO" ColumnName="ID_GRUPO" />
+          <ScalarProperty Name="ID_UNIDAD" ColumnName="ID_UNIDAD" />
+          <ScalarProperty Name="ORDEN_GRUPO" ColumnName="ORDEN_GRUPO" />
+          <ScalarProperty Name="PARAMETRO" ColumnName="PARAMETRO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="ANO_VIGENCIA" ColumnName="ANO_VIGENCIA" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUB_PRIVILEGIOS">
+      <EntityTypeMapping TypeName="MVCupme.MUB_PRIVILEGIOS">
+        <MappingFragment StoreEntitySet="MUB_PRIVILEGIOS">
+          <ScalarProperty Name="ID_PRIVILEGIO" ColumnName="ID_PRIVILEGIO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_USUARIO_ACTUALIZACION" ColumnName="ID_USUARIO_ACTUALIZACION" />
+          <ScalarProperty Name="FECHA_ACTUALIZACION" ColumnName="FECHA_ACTUALIZACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUB_ROL">
+      <EntityTypeMapping TypeName="MVCupme.MUB_ROL">
+        <MappingFragment StoreEntitySet="MUB_ROL">
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_MODULO" ColumnName="ID_MODULO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUB_ROL_PRIVILEGIOS">
+      <EntityTypeMapping TypeName="MVCupme.MUB_ROL_PRIVILEGIOS">
+        <MappingFragment StoreEntitySet="MUB_ROL_PRIVILEGIOS">
+          <ScalarProperty Name="ID_ROL_PRIVILEGIO" ColumnName="ID_ROL_PRIVILEGIO" />
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="INSERT" ColumnName="INSERT" />
+          <ScalarProperty Name="UPDATE" ColumnName="UPDATE" />
+          <ScalarProperty Name="DELETE" ColumnName="DELETE" />
+          <ScalarProperty Name="QUERYS" ColumnName="QUERYS" />
+          <ScalarProperty Name="ID_USUARIO_ACTUALIZACION" ColumnName="ID_USUARIO_ACTUALIZACION" />
+          <ScalarProperty Name="FECHA_ACTUALIZACION" ColumnName="FECHA_ACTUALIZACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUB_USUARIOS">
+      <EntityTypeMapping TypeName="MVCupme.MUB_USUARIOS">
+        <MappingFragment StoreEntitySet="MUB_USUARIOS">
+          <ScalarProperty Name="ID_ORGANIZACION" ColumnName="ID_ORGANIZACION" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+          <ScalarProperty Name="EXTENSION" ColumnName="EXTENSION" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="PWDHASH" ColumnName="PWDHASH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUB_GRUPOS">
+      <EntityTypeMapping TypeName="MVCupme.MUB_GRUPOS">
+        <MappingFragment StoreEntitySet="MUB_GRUPOS">
+          <ScalarProperty Name="ID_GRUPO" ColumnName="ID_GRUPO" />
+          <ScalarProperty Name="ID_MODULO" ColumnName="ID_MODULO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUB_MODULOS">
+      <EntityTypeMapping TypeName="MVCupme.MUB_MODULOS">
+        <MappingFragment StoreEntitySet="MUB_MODULOS">
+          <ScalarProperty Name="ID_MODULO" ColumnName="ID_MODULO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUB_UNIDADES">
+      <EntityTypeMapping TypeName="MVCupme.MUB_UNIDADES">
+        <MappingFragment StoreEntitySet="MUB_UNIDADES">
+          <ScalarProperty Name="ID_UNIDAD" ColumnName="ID_UNIDAD" />
+          <ScalarProperty Name="UNIDAD" ColumnName="UNIDAD" />
+          <ScalarProperty Name="UNI_DESCRIPCION" ColumnName="UNI_DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MUB_USUARIOS_ROLES">
+      <EntityTypeMapping TypeName="MVCupme.MUB_USUARIOS_ROLES">
+        <MappingFragment StoreEntitySet="MUB_USUARIOS_ROLES">
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="FECHA_ACTUALIZACION" ColumnName="FECHA_ACTUALIZACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

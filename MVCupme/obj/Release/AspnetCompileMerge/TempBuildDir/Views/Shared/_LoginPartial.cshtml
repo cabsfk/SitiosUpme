@@ -1,0 +1,52 @@
+﻿@using Microsoft.AspNet.Identity
+@if (User.Identity.IsAuthenticated == true)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <ul class="nav navbar-nav navbar-left">
+            <li id="PgnIndex">@Html.ActionLink("Inicio", "Index", "Home")</li>
+            @if (MVCupme.Controllers.GlobalVariables.Acceso("CREADOR") || MVCupme.Controllers.GlobalVariables.Acceso("ADMIN"))
+            {
+                <li id="PgnCrear">@Html.ActionLink("Crear", "Crear", "Home")</li>
+            }
+            @if (MVCupme.Controllers.GlobalVariables.Acceso("ADMIN"))
+            {
+                <li id="PgnValidar">@Html.ActionLink("Validar", "Validar", "Home")</li>
+            }
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+            <li>
+                @Html.ActionLink("Hola " + User.Identity.GetUserName() + "!", "", "")
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <!--li id="PgnRegister">
+                        <a href="@Url.Action("Register", "Account")">
+                            <i class="glyphicon glyphicon-plus-sign"></i>  Registrar
+                        </a>
+                    </li --->
+                    <!-- li>
+                        <a href="@Url.Action("ChangePassword", "Manage")">
+                            <i class="fa fa-gear"></i>  Contraseña
+                        </a>
+                    </li -->
+                    <li class="divider"></li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-fw fa-power-off"></i>Cerrar sesión</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav">
+        <li id="PgnIndex">@Html.ActionLink("Inicio", "Index", "Home")</li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li id="PgnLogin">@Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

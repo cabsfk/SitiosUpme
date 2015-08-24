@@ -1,0 +1,649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content Oracle.ManagedDataAccess.Client-->
+    <edmx:StorageModels>
+    <Schema Namespace="MVCupme.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MUB_GENERALES">
+          <Key>
+            <PropertyRef Name="ID_PARAMETROS" />
+          </Key>
+          <Property Name="ID_PARAMETROS" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="ID_MODULOS" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="ID_GRUPO" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="ID_UNIDAD" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="ORDEN_GRUPO" Type="number" Precision="3" Scale="0" />
+          <Property Name="PARAMETRO" Type="nvarchar2" MaxLength="150" />
+          <Property Name="DESCRIPCION" Type="nvarchar2" MaxLength="254" />
+          <Property Name="VALOR" Type="nvarchar2" MaxLength="254" />
+          <Property Name="ANO_VIGENCIA" Type="number" Precision="11" Scale="0" />
+          <Property Name="ESTADO" Type="char" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MU.MUB_GRUPOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MUB_GRUPOS">
+          <Key>
+            <PropertyRef Name="ID_GRUPO" />
+          </Key>
+          <Property Name="ID_GRUPO" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="ID_MODULO" Type="number" Precision="11" Scale="0" />
+          <Property Name="DESCRIPCION" Type="nvarchar2" MaxLength="254" />
+        </EntityType>
+        <EntityType Name="MUB_MODULOS">
+          <Key>
+            <PropertyRef Name="ID_MODULO" />
+          </Key>
+          <Property Name="ID_MODULO" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar2" MaxLength="254" />
+        </EntityType>
+
+        <EntityType Name="MUB_ORGANIZACIONES">
+          <Key>
+            <PropertyRef Name="ID_ORGANIZACION" />
+          </Key>
+          <Property Name="ID_ORGANIZACION" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="NIT" Type="nvarchar2" MaxLength="11" Nullable="false" />
+          <Property Name="RAZON_SOCIAL" Type="nvarchar2" MaxLength="254" Nullable="false" />
+          <Property Name="DIRECCION" Type="nvarchar2" MaxLength="50" />
+          <Property Name="TELEFONO" Type="nvarchar2" MaxLength="12" />
+          <Property Name="REPRESENTANTE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="SUBTIPO" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ID_TIPO_ORGANIZACION" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="ACTIVO" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="SIGLA" Type="nvarchar2" MaxLength="50" />
+          <Property Name="MP_UPME" Type="nvarchar2" MaxLength="10" />
+          <Property Name="ID_AREA_DISTRIBUCION" Type="number" Precision="11" Scale="0" />
+          <Property Name="CODIGO" Type="nvarchar2" MaxLength="10" />
+          <Property Name="DP_UPME" Type="nvarchar2" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="MUB_PRIVILEGIOS">
+          <Key>
+            <PropertyRef Name="ID_PRIVILEGIO" />
+          </Key>
+          <Property Name="ID_PRIVILEGIO" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar2" MaxLength="100" Nullable="false" />
+          <Property Name="ID_USUARIO_ACTUALIZACION" Type="number" Precision="11" Scale="0" />
+          <Property Name="FECHA_ACTUALIZACION" Type="date" />
+        </EntityType>
+        <EntityType Name="MUB_ROL">
+          <Key>
+            <PropertyRef Name="ID_ROL" />
+          </Key>
+          <Property Name="ID_ROL" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="nvarchar2" MaxLength="100" />
+          <Property Name="ID_MODULO" Type="number" Precision="11" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MUB_ROL_PRIVILEGIOS">
+          <Key>
+            <PropertyRef Name="ID_ROL_PRIVILEGIO" />
+            <PropertyRef Name="ID_ROL" />
+          </Key>
+          <Property Name="ID_ROL_PRIVILEGIO" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="ID_ROL" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="INSERT" Type="char" MaxLength="1" />
+          <Property Name="UPDATE" Type="char" MaxLength="1" />
+          <Property Name="DELETE" Type="char" MaxLength="1" />
+          <Property Name="QUERYS" Type="char" MaxLength="1" />
+          <Property Name="ID_USUARIO_ACTUALIZACION" Type="number" Precision="11" Scale="0" />
+          <Property Name="FECHA_ACTUALIZACION" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MU.MUB_UNIDADES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MUB_UNIDADES">
+          <Key>
+            <PropertyRef Name="ID_UNIDAD" />
+          </Key>
+          <Property Name="ID_UNIDAD" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="UNIDAD" Type="nvarchar2" MaxLength="100" />
+          <Property Name="UNI_DESCRIPCION" Type="nvarchar2" MaxLength="254" />
+        </EntityType>
+        <EntityType Name="MUB_USUARIOS">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="nvarchar2" MaxLength="100" Nullable="false" />
+          <Property Name="CARGO" Type="nvarchar2" MaxLength="100" />
+          <Property Name="DIRECCION" Type="nvarchar2" MaxLength="150" />
+          <Property Name="TELEFONO" Type="nvarchar2" MaxLength="15" />
+          <Property Name="CELULAR" Type="nvarchar2" MaxLength="15" />
+          <Property Name="EXTENSION" Type="nvarchar2" MaxLength="5" />
+          <Property Name="FAX" Type="nvarchar2" MaxLength="10" />
+          <Property Name="EMAIL" Type="nvarchar2" MaxLength="200" Nullable="false" />
+          <Property Name="ESTADO" Type="nvarchar2" MaxLength="1" />
+          <Property Name="PWDHASH" Type="nvarchar2" MaxLength="254" />
+          <Property Name="ID_ORGANIZACION" Type="number" Precision="11" Scale="0" Nullable="false"/>
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MU.MUB_USUARIOS_ROLES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MUB_USUARIOS_ROLES">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+            <PropertyRef Name="ID_ROL" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="number" Precision="11" Scale="0" Nullable="false" />
+          <Property Name="ID_ROL" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FECHA_ACTUALIZACION" Type="date" />
+        </EntityType>
+        <Association Name="FK_MU_ROL_PRIVILEGIOS_PRI">
+          <End Role="MUB_PRIVILEGIOS" Type="Self.MUB_PRIVILEGIOS" Multiplicity="1" />
+          <End Role="MUB_ROL_PRIVILEGIOS" Type="Self.MUB_ROL_PRIVILEGIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUB_PRIVILEGIOS">
+              <PropertyRef Name="ID_PRIVILEGIO" />
+            </Principal>
+            <Dependent Role="MUB_ROL_PRIVILEGIOS">
+              <PropertyRef Name="ID_ROL_PRIVILEGIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MU_ROL_PRIVILEGIOS_ROL">
+          <End Role="MUB_ROL" Type="Self.MUB_ROL" Multiplicity="1" />
+          <End Role="MUB_ROL_PRIVILEGIOS" Type="Self.MUB_ROL_PRIVILEGIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUB_ROL">
+              <PropertyRef Name="ID_ROL" />
+            </Principal>
+            <Dependent Role="MUB_ROL_PRIVILEGIOS">
+              <PropertyRef Name="ID_ROL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROL_MODULO">
+          <End Role="MUB_MODULOS" Type="Self.MUB_MODULOS" Multiplicity="1" />
+          <End Role="MUB_ROL" Type="Self.MUB_ROL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUB_MODULOS">
+              <PropertyRef Name="ID_MODULO" />
+            </Principal>
+            <Dependent Role="MUB_ROL">
+              <PropertyRef Name="ID_MODULO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIOS_ROLES_USUARIOS">
+          <End Role="MUB_USUARIOS" Type="Self.MUB_USUARIOS" Multiplicity="1" />
+          <End Role="MUB_USUARIOS_ROLES" Type="Self.MUB_USUARIOS_ROLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUB_USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="MUB_USUARIOS_ROLES">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USUARIOS_ROLES_MU_ROL_FK">
+          <End Role="MUB_ROL" Type="Self.MUB_ROL" Multiplicity="1" />
+          <End Role="MUB_USUARIOS_ROLES" Type="Self.MUB_USUARIOS_ROLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUB_ROL">
+              <PropertyRef Name="ID_ROL" />
+            </Principal>
+            <Dependent Role="MUB_USUARIOS_ROLES">
+              <PropertyRef Name="ID_ROL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      <Association Name="MUB_ORGANIZACIONESMUB_USUARIOS">
+        <End Role="MUB_ORGANIZACIONES" Type="Self.MUB_ORGANIZACIONES" Multiplicity="1" />
+        <End Role="MUB_USUARIOS" Type="Self.MUB_USUARIOS" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="MUB_ORGANIZACIONES">
+            <PropertyRef Name="ID_ORGANIZACION" />
+          </Principal>
+          <Dependent Role="MUB_USUARIOS">
+            <PropertyRef Name="ID_ORGANIZACION" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+        <EntityContainer Name="MVCupmeStoreContainer">
+          <EntitySet Name="MUB_GENERALES" EntityType="Self.MUB_GENERALES" Schema="MU" store:Type="Tables" />
+          <EntitySet Name="MUB_MODULOS" EntityType="Self.MUB_MODULOS" Schema="MU" store:Type="Tables" />
+          <EntitySet Name="MUB_ORGANIZACIONES" EntityType="Self.MUB_ORGANIZACIONES" Schema="MU" store:Type="Tables" />
+
+          <EntitySet Name="MUB_PRIVILEGIOS" EntityType="Self.MUB_PRIVILEGIOS" Schema="MU" store:Type="Tables" />
+          <EntitySet Name="MUB_ROL" EntityType="Self.MUB_ROL" Schema="MU" store:Type="Tables" />
+          <EntitySet Name="MUB_ROL_PRIVILEGIOS" EntityType="Self.MUB_ROL_PRIVILEGIOS" Schema="MU" store:Type="Tables" />
+          <EntitySet Name="MUB_USUARIOS" EntityType="Self.MUB_USUARIOS" Schema="MU" store:Type="Tables" />
+          <EntitySet Name="MUB_GRUPOS" EntityType="Self.MUB_GRUPOS" store:Type="Tables" store:Schema="MU">
+            <DefiningQuery>SELECT 
+"MUB_GRUPOS"."ID_GRUPO" AS "ID_GRUPO", 
+"MUB_GRUPOS"."ID_MODULO" AS "ID_MODULO", 
+"MUB_GRUPOS"."DESCRIPCION" AS "DESCRIPCION"
+FROM "MU"."MUB_GRUPOS" "MUB_GRUPOS"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MUB_UNIDADES" EntityType="Self.MUB_UNIDADES" store:Type="Tables" store:Schema="MU">
+            <DefiningQuery>SELECT 
+"MUB_UNIDADES"."ID_UNIDAD" AS "ID_UNIDAD", 
+"MUB_UNIDADES"."UNIDAD" AS "UNIDAD", 
+"MUB_UNIDADES"."UNI_DESCRIPCION" AS "UNI_DESCRIPCION"
+FROM "MU"."MUB_UNIDADES" "MUB_UNIDADES"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MUB_USUARIOS_ROLES" EntityType="Self.MUB_USUARIOS_ROLES" store:Type="Tables" store:Schema="MU">
+            <DefiningQuery>SELECT 
+"MUB_USUARIOS_ROLES"."ID_USUARIO" AS "ID_USUARIO", 
+"MUB_USUARIOS_ROLES"."ID_ROL" AS "ID_ROL", 
+"MUB_USUARIOS_ROLES"."FECHA_ACTUALIZACION" AS "FECHA_ACTUALIZACION"
+FROM "MU"."MUB_USUARIOS_ROLES" "MUB_USUARIOS_ROLES"</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_MU_ROL_PRIVILEGIOS_PRI" Association="Self.FK_MU_ROL_PRIVILEGIOS_PRI">
+            <End Role="MUB_PRIVILEGIOS" EntitySet="MUB_PRIVILEGIOS" />
+            <End Role="MUB_ROL_PRIVILEGIOS" EntitySet="MUB_ROL_PRIVILEGIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MU_ROL_PRIVILEGIOS_ROL" Association="Self.FK_MU_ROL_PRIVILEGIOS_ROL">
+            <End Role="MUB_ROL" EntitySet="MUB_ROL" />
+            <End Role="MUB_ROL_PRIVILEGIOS" EntitySet="MUB_ROL_PRIVILEGIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROL_MODULO" Association="Self.FK_ROL_MODULO">
+            <End Role="MUB_MODULOS" EntitySet="MUB_MODULOS" />
+            <End Role="MUB_ROL" EntitySet="MUB_ROL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIOS_ROLES_USUARIOS" Association="Self.FK_USUARIOS_ROLES_USUARIOS">
+            <End Role="MUB_USUARIOS" EntitySet="MUB_USUARIOS" />
+            <End Role="MUB_USUARIOS_ROLES" EntitySet="MUB_USUARIOS_ROLES" />
+          </AssociationSet>
+          <AssociationSet Name="USUARIOS_ROLES_MU_ROL_FK" Association="Self.USUARIOS_ROLES_MU_ROL_FK">
+            <End Role="MUB_ROL" EntitySet="MUB_ROL" />
+            <End Role="MUB_USUARIOS_ROLES" EntitySet="MUB_USUARIOS_ROLES" />
+          </AssociationSet>
+          <AssociationSet Name="MUB_ORGANIZACIONESMUB_USUARIOS" Association="Self.MUB_ORGANIZACIONESMUB_USUARIOS">
+            <End Role="MUB_ORGANIZACIONES" EntitySet="MUB_ORGANIZACIONES" />
+            <End Role="MUB_USUARIOS" EntitySet="MUB_USUARIOS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MVCupme" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MUB_ORGANIZACIONES">
+          <Key>
+            <PropertyRef Name="ID_ORGANIZACION" />
+          </Key>
+          <Property Name="ID_ORGANIZACION" Type="Int64" Nullable="false" />
+          <Property Name="NIT" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RAZON_SOCIAL" Type="String" MaxLength="254" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFONO" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="REPRESENTANTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_TIPO_ORGANIZACION" Type="Int64" Nullable="false" />
+          <Property Name="SIGLA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+
+          <Property Name="MP_UPME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ID_AREA_DISTRIBUCION" Type="Int64" />
+          <Property Name="CODIGO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DP_UPME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVO" Type="Int64" Nullable="false" />
+
+		  <NavigationProperty Name="MUB_USUARIOS" Relationship="MVCupme.MUB_ORGANIZACIONESMUB_USUARIOS" FromRole="MUB_ORGANIZACIONES" ToRole="MUB_USUARIOS" />
+        </EntityType>
+        <Association Name="MUB_ORGANIZACIONESMUB_USUARIOS">
+          <End Type="MVCupme.MUB_ORGANIZACIONES" Role="MUB_ORGANIZACIONES" Multiplicity="1" />
+          <End Type="MVCupme.MUB_USUARIOS" Role="MUB_USUARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUB_ORGANIZACIONES">
+              <PropertyRef Name="ID_ORGANIZACION" />
+            </Principal>
+            <Dependent Role="MUB_USUARIOS">
+              <PropertyRef Name="ID_ORGANIZACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MUB_GENERALES">
+          <Key>
+            <PropertyRef Name="ID_PARAMETROS" />
+          </Key>
+          <Property Name="ID_PARAMETROS" Type="Int64" Nullable="false" />
+          <Property Name="ID_MODULOS" Type="Int64" Nullable="false" />
+          <Property Name="ID_GRUPO" Type="Int64" Nullable="false" />
+          <Property Name="ID_UNIDAD" Type="Int64" Nullable="false" />
+          <Property Name="ORDEN_GRUPO" Type="Byte" />
+          <Property Name="PARAMETRO" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="VALOR" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="ANO_VIGENCIA" Type="Int64" />
+          <Property Name="ESTADO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MUB_PRIVILEGIOS">
+          <Key>
+            <PropertyRef Name="ID_PRIVILEGIO" />
+          </Key>
+          <Property Name="ID_PRIVILEGIO" Type="Int64" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_USUARIO_ACTUALIZACION" Type="Int64" />
+          <Property Name="FECHA_ACTUALIZACION" Type="DateTime" />
+          <NavigationProperty Name="MUB_ROL_PRIVILEGIOS" Relationship="Self.FK_MU_ROL_PRIVILEGIOS_PRI" FromRole="MUB_PRIVILEGIOS" ToRole="MUB_ROL_PRIVILEGIOS" />
+        </EntityType>
+        <EntityType Name="MUB_ROL">
+          <Key>
+            <PropertyRef Name="ID_ROL" />
+          </Key>
+          <Property Name="ID_ROL" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ID_MODULO" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="MUB_ROL_PRIVILEGIOS" Relationship="Self.FK_MU_ROL_PRIVILEGIOS_ROL" FromRole="MUB_ROL" ToRole="MUB_ROL_PRIVILEGIOS" />
+          <NavigationProperty Name="MUB_USUARIOS_ROLES" Relationship="Self.USUARIOS_ROLES_MU_ROL_FK" FromRole="MUB_ROL" ToRole="MUB_USUARIOS_ROLES" />
+          <NavigationProperty Name="MUB_MODULOS" Relationship="MVCupme.FK_ROL_MODULO" FromRole="MUB_ROL" ToRole="MUB_MODULOS" />
+        </EntityType>
+        <EntityType Name="MUB_ROL_PRIVILEGIOS">
+          <Key>
+            <PropertyRef Name="ID_ROL_PRIVILEGIO" />
+            <PropertyRef Name="ID_ROL" />
+          </Key>
+          <Property Name="ID_ROL_PRIVILEGIO" Type="Int64" Nullable="false" />
+          <Property Name="ID_ROL" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="INSERT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UPDATE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DELETE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="QUERYS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ID_USUARIO_ACTUALIZACION" Type="Int64" />
+          <Property Name="FECHA_ACTUALIZACION" Type="DateTime" />
+          <NavigationProperty Name="MUB_PRIVILEGIOS" Relationship="Self.FK_MU_ROL_PRIVILEGIOS_PRI" FromRole="MUB_ROL_PRIVILEGIOS" ToRole="MUB_PRIVILEGIOS" />
+          <NavigationProperty Name="MUB_ROL" Relationship="Self.FK_MU_ROL_PRIVILEGIOS_ROL" FromRole="MUB_ROL_PRIVILEGIOS" ToRole="MUB_ROL" />
+        </EntityType>
+        <EntityType Name="MUB_USUARIOS">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="Int64" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CARGO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DIRECCION" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFONO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CELULAR" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="EXTENSION" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="FAX" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="PWDHASH" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="ID_ORGANIZACION" Type="Int64" Nullable="false" />
+		  <NavigationProperty Name="MUB_USUARIOS_ROLES" Relationship="Self.FK_USUARIOS_ROLES_USUARIOS" FromRole="MUB_USUARIOS" ToRole="MUB_USUARIOS_ROLES" />
+		  <NavigationProperty Name="MUB_ORGANIZACIONES" Relationship="Self.MUB_ORGANIZACIONESMUB_USUARIOS" FromRole="MUB_USUARIOS" ToRole="MUB_ORGANIZACIONES" />
+          
+
+        </EntityType>
+        <EntityType Name="MUB_GRUPOS">
+          <Key>
+            <PropertyRef Name="ID_GRUPO" />
+          </Key>
+          <Property Name="ID_GRUPO" Type="Int64" Nullable="false" />
+          <Property Name="ID_MODULO" Type="Int64" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MUB_MODULOS">
+          <Key>
+            <PropertyRef Name="ID_MODULO" />
+          </Key>
+          <Property Name="ID_MODULO" Type="Int64" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MUB_ROL" Relationship="MVCupme.FK_ROL_MODULO" FromRole="MUB_MODULOS" ToRole="MUB_ROL" />
+        </EntityType>
+        <EntityType Name="MUB_UNIDADES">
+          <Key>
+            <PropertyRef Name="ID_UNIDAD" />
+          </Key>
+          <Property Name="ID_UNIDAD" Type="Int64" Nullable="false" />
+          <Property Name="UNIDAD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UNI_DESCRIPCION" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MUB_USUARIOS_ROLES">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+            <PropertyRef Name="ID_ROL" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="Int64" Nullable="false" />
+          <Property Name="ID_ROL" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FECHA_ACTUALIZACION" Type="DateTime" />
+          <NavigationProperty Name="MUB_ROL" Relationship="Self.USUARIOS_ROLES_MU_ROL_FK" FromRole="MUB_USUARIOS_ROLES" ToRole="MUB_ROL" />
+          <NavigationProperty Name="MUB_USUARIOS" Relationship="Self.FK_USUARIOS_ROLES_USUARIOS" FromRole="MUB_USUARIOS_ROLES" ToRole="MUB_USUARIOS" />
+        </EntityType>
+        <Association Name="FK_MU_ROL_PRIVILEGIOS_PRI">
+          <End Role="MUB_PRIVILEGIOS" Type="Self.MUB_PRIVILEGIOS" Multiplicity="1" />
+          <End Role="MUB_ROL_PRIVILEGIOS" Type="Self.MUB_ROL_PRIVILEGIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUB_PRIVILEGIOS">
+              <PropertyRef Name="ID_PRIVILEGIO" />
+            </Principal>
+            <Dependent Role="MUB_ROL_PRIVILEGIOS">
+              <PropertyRef Name="ID_ROL_PRIVILEGIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MU_ROL_PRIVILEGIOS_ROL">
+          <End Role="MUB_ROL" Type="Self.MUB_ROL" Multiplicity="1" />
+          <End Role="MUB_ROL_PRIVILEGIOS" Type="Self.MUB_ROL_PRIVILEGIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUB_ROL">
+              <PropertyRef Name="ID_ROL" />
+            </Principal>
+            <Dependent Role="MUB_ROL_PRIVILEGIOS">
+              <PropertyRef Name="ID_ROL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USUARIOS_ROLES_MU_ROL_FK">
+          <End Role="MUB_ROL" Type="Self.MUB_ROL" Multiplicity="1" />
+          <End Role="MUB_USUARIOS_ROLES" Type="Self.MUB_USUARIOS_ROLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUB_ROL">
+              <PropertyRef Name="ID_ROL" />
+            </Principal>
+            <Dependent Role="MUB_USUARIOS_ROLES">
+              <PropertyRef Name="ID_ROL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIOS_ROLES_USUARIOS">
+          <End Role="MUB_USUARIOS" Type="Self.MUB_USUARIOS" Multiplicity="1" />
+          <End Role="MUB_USUARIOS_ROLES" Type="Self.MUB_USUARIOS_ROLES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUB_USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="MUB_USUARIOS_ROLES">
+              <PropertyRef Name="ID_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CxUsr" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MUB_GENERALES" EntityType="Self.MUB_GENERALES" />
+          <EntitySet Name="MUB_PRIVILEGIOS" EntityType="Self.MUB_PRIVILEGIOS" />
+          <EntitySet Name="MUB_ROL" EntityType="Self.MUB_ROL" />
+          <EntitySet Name="MUB_ROL_PRIVILEGIOS" EntityType="Self.MUB_ROL_PRIVILEGIOS" />
+          <EntitySet Name="MUB_USUARIOS" EntityType="Self.MUB_USUARIOS" />
+          <EntitySet Name="MUB_GRUPOS" EntityType="Self.MUB_GRUPOS" />
+          <EntitySet Name="MUB_MODULOS" EntityType="Self.MUB_MODULOS" />
+          <EntitySet Name="MUB_UNIDADES" EntityType="Self.MUB_UNIDADES" />
+          <EntitySet Name="MUB_USUARIOS_ROLES" EntityType="Self.MUB_USUARIOS_ROLES" />
+          <AssociationSet Name="FK_MU_ROL_PRIVILEGIOS_PRI" Association="Self.FK_MU_ROL_PRIVILEGIOS_PRI">
+            <End Role="MUB_PRIVILEGIOS" EntitySet="MUB_PRIVILEGIOS" />
+            <End Role="MUB_ROL_PRIVILEGIOS" EntitySet="MUB_ROL_PRIVILEGIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MU_ROL_PRIVILEGIOS_ROL" Association="Self.FK_MU_ROL_PRIVILEGIOS_ROL">
+            <End Role="MUB_ROL" EntitySet="MUB_ROL" />
+            <End Role="MUB_ROL_PRIVILEGIOS" EntitySet="MUB_ROL_PRIVILEGIOS" />
+          </AssociationSet>
+          <AssociationSet Name="USUARIOS_ROLES_MU_ROL_FK" Association="Self.USUARIOS_ROLES_MU_ROL_FK">
+            <End Role="MUB_ROL" EntitySet="MUB_ROL" />
+            <End Role="MUB_USUARIOS_ROLES" EntitySet="MUB_USUARIOS_ROLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIOS_ROLES_USUARIOS" Association="Self.FK_USUARIOS_ROLES_USUARIOS">
+            <End Role="MUB_USUARIOS" EntitySet="MUB_USUARIOS" />
+            <End Role="MUB_USUARIOS_ROLES" EntitySet="MUB_USUARIOS_ROLES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROL_MODULO" Association="MVCupme.FK_ROL_MODULO">
+            <End Role="MUB_MODULOS" EntitySet="MUB_MODULOS" />
+            <End Role="MUB_ROL" EntitySet="MUB_ROL" />
+          </AssociationSet>
+          <EntitySet Name="MUB_ORGANIZACIONES" EntityType="MVCupme.MUB_ORGANIZACIONES" />
+          <AssociationSet Name="MUB_ORGANIZACIONESMUB_USUARIOS" Association="pcMdlSpc.MUB_ORGANIZACIONESMUB_USUARIOS">
+            <End Role="MUB_ORGANIZACIONES" EntitySet="MUB_ORGANIZACIONES" />
+            <End Role="MUB_USUARIOS" EntitySet="MUB_USUARIOS" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_ROL_MODULO">
+          <End Type="MVCupme.MUB_MODULOS" Role="MUB_MODULOS" Multiplicity="1" />
+          <End Type="MVCupme.MUB_ROL" Role="MUB_ROL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MUB_MODULOS">
+              <PropertyRef Name="ID_MODULO" />
+            </Principal>
+            <Dependent Role="MUB_ROL">
+              <PropertyRef Name="ID_MODULO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MVCupmeStoreContainer" CdmEntityContainer="CxUsr">
+          <EntitySetMapping Name="MUB_ORGANIZACIONES">
+            <EntityTypeMapping TypeName="MVCupme.MUB_ORGANIZACIONES">
+              <MappingFragment StoreEntitySet="MUB_ORGANIZACIONES">
+                <ScalarProperty Name="ID_ORGANIZACION" ColumnName="ID_ORGANIZACION" />
+                <ScalarProperty Name="DP_UPME" ColumnName="DP_UPME" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="ID_AREA_DISTRIBUCION" ColumnName="ID_AREA_DISTRIBUCION" />
+                <ScalarProperty Name="MP_UPME" ColumnName="MP_UPME" />
+                <ScalarProperty Name="SIGLA" ColumnName="SIGLA" />
+                <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+                <ScalarProperty Name="ID_TIPO_ORGANIZACION" ColumnName="ID_TIPO_ORGANIZACION" />
+                <ScalarProperty Name="REPRESENTANTE" ColumnName="REPRESENTANTE" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="RAZON_SOCIAL" ColumnName="RAZON_SOCIAL" />
+                <ScalarProperty Name="NIT" ColumnName="NIT" />
+
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUB_GENERALES">
+            <EntityTypeMapping TypeName="MVCupme.MUB_GENERALES">
+              <MappingFragment StoreEntitySet="MUB_GENERALES">
+                <ScalarProperty Name="ID_PARAMETROS" ColumnName="ID_PARAMETROS" />
+                <ScalarProperty Name="ID_MODULOS" ColumnName="ID_MODULOS" />
+                <ScalarProperty Name="ID_GRUPO" ColumnName="ID_GRUPO" />
+                <ScalarProperty Name="ID_UNIDAD" ColumnName="ID_UNIDAD" />
+                <ScalarProperty Name="ORDEN_GRUPO" ColumnName="ORDEN_GRUPO" />
+                <ScalarProperty Name="PARAMETRO" ColumnName="PARAMETRO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+                <ScalarProperty Name="ANO_VIGENCIA" ColumnName="ANO_VIGENCIA" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUB_PRIVILEGIOS">
+            <EntityTypeMapping TypeName="MVCupme.MUB_PRIVILEGIOS">
+              <MappingFragment StoreEntitySet="MUB_PRIVILEGIOS">
+                <ScalarProperty Name="ID_PRIVILEGIO" ColumnName="ID_PRIVILEGIO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ID_USUARIO_ACTUALIZACION" ColumnName="ID_USUARIO_ACTUALIZACION" />
+                <ScalarProperty Name="FECHA_ACTUALIZACION" ColumnName="FECHA_ACTUALIZACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUB_ROL">
+            <EntityTypeMapping TypeName="MVCupme.MUB_ROL">
+              <MappingFragment StoreEntitySet="MUB_ROL">
+                <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="ID_MODULO" ColumnName="ID_MODULO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUB_ROL_PRIVILEGIOS">
+            <EntityTypeMapping TypeName="MVCupme.MUB_ROL_PRIVILEGIOS">
+              <MappingFragment StoreEntitySet="MUB_ROL_PRIVILEGIOS">
+                <ScalarProperty Name="ID_ROL_PRIVILEGIO" ColumnName="ID_ROL_PRIVILEGIO" />
+                <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+                <ScalarProperty Name="INSERT" ColumnName="INSERT" />
+                <ScalarProperty Name="UPDATE" ColumnName="UPDATE" />
+                <ScalarProperty Name="DELETE" ColumnName="DELETE" />
+                <ScalarProperty Name="QUERYS" ColumnName="QUERYS" />
+                <ScalarProperty Name="ID_USUARIO_ACTUALIZACION" ColumnName="ID_USUARIO_ACTUALIZACION" />
+                <ScalarProperty Name="FECHA_ACTUALIZACION" ColumnName="FECHA_ACTUALIZACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUB_USUARIOS">
+            <EntityTypeMapping TypeName="MVCupme.MUB_USUARIOS">
+              <MappingFragment StoreEntitySet="MUB_USUARIOS">
+                <ScalarProperty Name="ID_ORGANIZACION" ColumnName="ID_ORGANIZACION" />
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+                <ScalarProperty Name="EXTENSION" ColumnName="EXTENSION" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="PWDHASH" ColumnName="PWDHASH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUB_GRUPOS">
+            <EntityTypeMapping TypeName="MVCupme.MUB_GRUPOS">
+              <MappingFragment StoreEntitySet="MUB_GRUPOS">
+                <ScalarProperty Name="ID_GRUPO" ColumnName="ID_GRUPO" />
+                <ScalarProperty Name="ID_MODULO" ColumnName="ID_MODULO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUB_MODULOS">
+            <EntityTypeMapping TypeName="MVCupme.MUB_MODULOS">
+              <MappingFragment StoreEntitySet="MUB_MODULOS">
+                <ScalarProperty Name="ID_MODULO" ColumnName="ID_MODULO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUB_UNIDADES">
+            <EntityTypeMapping TypeName="MVCupme.MUB_UNIDADES">
+              <MappingFragment StoreEntitySet="MUB_UNIDADES">
+                <ScalarProperty Name="ID_UNIDAD" ColumnName="ID_UNIDAD" />
+                <ScalarProperty Name="UNIDAD" ColumnName="UNIDAD" />
+                <ScalarProperty Name="UNI_DESCRIPCION" ColumnName="UNI_DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUB_USUARIOS_ROLES">
+            <EntityTypeMapping TypeName="MVCupme.MUB_USUARIOS_ROLES">
+              <MappingFragment StoreEntitySet="MUB_USUARIOS_ROLES">
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+                <ScalarProperty Name="FECHA_ACTUALIZACION" ColumnName="FECHA_ACTUALIZACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

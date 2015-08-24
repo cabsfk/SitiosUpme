@@ -1,0 +1,630 @@
+C:\cab\net\UPME\MVCupme\bin\MVCupme.dll.config
+C:\cab\net\UPME\MVCupme\bin\MVCupme.dll
+C:\cab\net\UPME\MVCupme\bin\MVCupme.pdb
+C:\cab\net\UPME\MVCupme\bin\Antlr3.Runtime.dll
+C:\cab\net\UPME\MVCupme\bin\EntityFramework.dll
+C:\cab\net\UPME\MVCupme\bin\EntityFramework.SqlServer.dll
+C:\cab\net\UPME\MVCupme\bin\Microsoft.AspNet.Identity.Core.dll
+C:\cab\net\UPME\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\cab\net\UPME\MVCupme\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.dll
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Security.Cookies.dll
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Security.dll
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Security.Facebook.dll
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Security.Google.dll
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Security.OAuth.dll
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Security.Twitter.dll
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Web.Infrastructure.dll
+C:\cab\net\UPME\MVCupme\bin\Newtonsoft.Json.dll
+C:\cab\net\UPME\MVCupme\bin\Owin.dll
+C:\cab\net\UPME\MVCupme\bin\System.Web.Helpers.dll
+C:\cab\net\UPME\MVCupme\bin\System.Web.Mvc.dll
+C:\cab\net\UPME\MVCupme\bin\System.Web.Optimization.dll
+C:\cab\net\UPME\MVCupme\bin\System.Web.Razor.dll
+C:\cab\net\UPME\MVCupme\bin\System.Web.WebPages.Deployment.dll
+C:\cab\net\UPME\MVCupme\bin\System.Web.WebPages.dll
+C:\cab\net\UPME\MVCupme\bin\System.Web.WebPages.Razor.dll
+C:\cab\net\UPME\MVCupme\bin\WebGrease.dll
+C:\cab\net\UPME\MVCupme\bin\System.Web.Helpers.xml
+C:\cab\net\UPME\MVCupme\bin\System.Web.Mvc.xml
+C:\cab\net\UPME\MVCupme\bin\System.Web.Optimization.xml
+C:\cab\net\UPME\MVCupme\bin\System.Web.Razor.xml
+C:\cab\net\UPME\MVCupme\bin\System.Web.WebPages.xml
+C:\cab\net\UPME\MVCupme\bin\System.Web.WebPages.Deployment.xml
+C:\cab\net\UPME\MVCupme\bin\System.Web.WebPages.Razor.xml
+C:\cab\net\UPME\MVCupme\bin\Antlr3.Runtime.pdb
+C:\cab\net\UPME\MVCupme\bin\Newtonsoft.Json.xml
+C:\cab\net\UPME\MVCupme\bin\EntityFramework.xml
+C:\cab\net\UPME\MVCupme\bin\EntityFramework.SqlServer.xml
+C:\cab\net\UPME\MVCupme\bin\Microsoft.AspNet.Identity.Core.xml
+C:\cab\net\UPME\MVCupme\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\cab\net\UPME\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.xml
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Security.xml
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Security.Facebook.xml
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Security.Cookies.xml
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Security.OAuth.xml
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Security.Google.xml
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Security.Twitter.xml
+C:\cab\net\UPME\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\cab\net\UPME\MVCupme\bin\es\System.Web.Helpers.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\System.Web.Mvc.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\System.Web.Optimization.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\System.Web.Razor.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\System.Web.WebPages.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\EntityFramework.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\EntityFramework.SqlServer.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\Microsoft.Owin.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\Microsoft.Owin.Security.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\cab\net\UPME\MVCupme\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\cab\net\UPME\MVCupme\obj\Debug\MVCupme.csprojResolveAssemblyReference.cache
+C:\cab\net\UPME\MVCupme\obj\Debug\MVCupme.dll
+C:\cab\net\UPME\MVCupme\obj\Debug\MVCupme.pdb
+C:\upme\MVCupme\bin\MVCupme.dll.config
+C:\upme\MVCupme\bin\MVCupme.dll
+C:\upme\MVCupme\bin\MVCupme.pdb
+C:\upme\MVCupme\bin\Antlr3.Runtime.dll
+C:\upme\MVCupme\bin\AspNet.Identity.OracleProvider.dll
+C:\upme\MVCupme\bin\EntityFramework.dll
+C:\upme\MVCupme\bin\EntityFramework.SqlServer.dll
+C:\upme\MVCupme\bin\Microsoft.AspNet.Identity.Core.dll
+C:\upme\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\upme\MVCupme\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\upme\MVCupme\bin\Microsoft.Owin.dll
+C:\upme\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\upme\MVCupme\bin\Microsoft.Owin.Security.Cookies.dll
+C:\upme\MVCupme\bin\Microsoft.Owin.Security.dll
+C:\upme\MVCupme\bin\Microsoft.Owin.Security.Facebook.dll
+C:\upme\MVCupme\bin\Microsoft.Owin.Security.Google.dll
+C:\upme\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\upme\MVCupme\bin\Microsoft.Owin.Security.OAuth.dll
+C:\upme\MVCupme\bin\Microsoft.Owin.Security.Twitter.dll
+C:\upme\MVCupme\bin\Microsoft.Web.Infrastructure.dll
+C:\upme\MVCupme\bin\Newtonsoft.Json.dll
+C:\upme\MVCupme\bin\Oracle.ManagedDataAccess.dll
+C:\upme\MVCupme\bin\Owin.dll
+C:\upme\MVCupme\bin\System.Web.Helpers.dll
+C:\upme\MVCupme\bin\System.Web.Mvc.dll
+C:\upme\MVCupme\bin\System.Web.Optimization.dll
+C:\upme\MVCupme\bin\System.Web.Razor.dll
+C:\upme\MVCupme\bin\System.Web.WebPages.Deployment.dll
+C:\upme\MVCupme\bin\System.Web.WebPages.dll
+C:\upme\MVCupme\bin\System.Web.WebPages.Razor.dll
+C:\upme\MVCupme\bin\WebGrease.dll
+C:\upme\MVCupme\bin\AspNet.Identity.OracleProvider.pdb
+C:\upme\MVCupme\bin\EntityFramework.xml
+C:\upme\MVCupme\bin\EntityFramework.SqlServer.xml
+C:\upme\MVCupme\bin\Microsoft.AspNet.Identity.Core.xml
+C:\upme\MVCupme\bin\Microsoft.Owin.xml
+C:\upme\MVCupme\bin\System.Web.Helpers.xml
+C:\upme\MVCupme\bin\System.Web.Mvc.xml
+C:\upme\MVCupme\bin\System.Web.Razor.xml
+C:\upme\MVCupme\bin\System.Web.WebPages.xml
+C:\upme\MVCupme\bin\System.Web.WebPages.Deployment.xml
+C:\upme\MVCupme\bin\System.Web.WebPages.Razor.xml
+C:\upme\MVCupme\bin\System.Web.Optimization.xml
+C:\upme\MVCupme\bin\Antlr3.Runtime.pdb
+C:\upme\MVCupme\bin\Newtonsoft.Json.xml
+C:\upme\MVCupme\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\upme\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\upme\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\upme\MVCupme\bin\Microsoft.Owin.Security.xml
+C:\upme\MVCupme\bin\Microsoft.Owin.Security.Facebook.xml
+C:\upme\MVCupme\bin\Microsoft.Owin.Security.Cookies.xml
+C:\upme\MVCupme\bin\Microsoft.Owin.Security.OAuth.xml
+C:\upme\MVCupme\bin\Microsoft.Owin.Security.Google.xml
+C:\upme\MVCupme\bin\Microsoft.Owin.Security.Twitter.xml
+C:\upme\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\upme\MVCupme\bin\es\EntityFramework.resources.dll
+C:\upme\MVCupme\bin\es\EntityFramework.SqlServer.resources.dll
+C:\upme\MVCupme\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\upme\MVCupme\bin\es\Microsoft.Owin.resources.dll
+C:\upme\MVCupme\bin\es\System.Web.Helpers.resources.dll
+C:\upme\MVCupme\bin\es\System.Web.Mvc.resources.dll
+C:\upme\MVCupme\bin\es\System.Web.Razor.resources.dll
+C:\upme\MVCupme\bin\es\System.Web.WebPages.resources.dll
+C:\upme\MVCupme\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\upme\MVCupme\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\upme\MVCupme\bin\es\System.Web.Optimization.resources.dll
+C:\upme\MVCupme\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\upme\MVCupme\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\upme\MVCupme\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\upme\MVCupme\bin\es\Microsoft.Owin.Security.resources.dll
+C:\upme\MVCupme\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\upme\MVCupme\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\upme\MVCupme\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\upme\MVCupme\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\upme\MVCupme\obj\Debug\MVCupme.csprojResolveAssemblyReference.cache
+C:\upme\MVCupme\obj\Debug\MVCupme.dll
+C:\upme\MVCupme\obj\Debug\MVCupme.pdb
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\MVCupme.dll.config
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\MVCupme.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\MVCupme.pdb
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Antlr3.Runtime.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\AspNet.Identity.OracleProvider.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\EntityFramework.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\EntityFramework.SqlServer.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.AspNet.Identity.Core.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Security.Cookies.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Security.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Security.Facebook.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Security.Google.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Security.OAuth.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Security.Twitter.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Web.Infrastructure.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Newtonsoft.Json.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Oracle.ManagedDataAccess.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Owin.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\System.Web.Helpers.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\System.Web.Mvc.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\System.Web.Optimization.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\System.Web.Razor.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\System.Web.WebPages.Deployment.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\System.Web.WebPages.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\System.Web.WebPages.Razor.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\WebGrease.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\AspNet.Identity.OracleProvider.pdb
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\EntityFramework.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\EntityFramework.SqlServer.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.AspNet.Identity.Core.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\System.Web.Helpers.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\System.Web.Mvc.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\System.Web.Razor.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\System.Web.WebPages.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\System.Web.WebPages.Deployment.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\System.Web.WebPages.Razor.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\System.Web.Optimization.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Antlr3.Runtime.pdb
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Newtonsoft.Json.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Security.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Security.Facebook.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Security.Cookies.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Security.OAuth.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Security.Google.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Security.Twitter.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\EntityFramework.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\EntityFramework.SqlServer.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\Microsoft.Owin.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\System.Web.Helpers.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\System.Web.Mvc.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\System.Web.Razor.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\System.Web.WebPages.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\System.Web.Optimization.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\Microsoft.Owin.Security.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\obj\Debug\MVCupme.csprojResolveAssemblyReference.cache
+C:\CAB\upme\compartido2\codigo\MVCupme\obj\Debug\MVCupme.dll
+C:\CAB\upme\compartido2\codigo\MVCupme\obj\Debug\MVCupme.pdb
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\MVCupme.dll.config
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\MVCupme.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\MVCupme.pdb
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Antlr3.Runtime.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\AspNet.Identity.OracleProvider.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\EntityFramework.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\EntityFramework.SqlServer.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Core.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Cookies.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Facebook.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Google.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.OAuth.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Twitter.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Web.Infrastructure.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Newtonsoft.Json.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Oracle.ManagedDataAccess.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Owin.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Simple.Data.Ado.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Simple.Data.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Simple.Data.Oracle.ManagedDataAccess.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\System.Web.Helpers.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\System.Web.Mvc.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\System.Web.Optimization.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\System.Web.Razor.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\System.Web.WebPages.Deployment.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\System.Web.WebPages.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\System.Web.WebPages.Razor.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\WebGrease.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\AspNet.Identity.OracleProvider.pdb
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\EntityFramework.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\EntityFramework.SqlServer.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Core.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\System.Web.Helpers.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\System.Web.Mvc.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\System.Web.Razor.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\System.Web.WebPages.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\System.Web.WebPages.Deployment.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\System.Web.WebPages.Razor.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\System.Web.Optimization.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Antlr3.Runtime.pdb
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Newtonsoft.Json.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Facebook.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Cookies.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.OAuth.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Google.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Twitter.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\EntityFramework.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\EntityFramework.SqlServer.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\System.Web.Helpers.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\System.Web.Mvc.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\System.Web.Razor.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\System.Web.WebPages.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\System.Web.Optimization.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\obj\Debug\MVCupme.csprojResolveAssemblyReference.cache
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\obj\Debug\MVCupme.dll
+C:\upme\GDBSubEstaciones\gdb\SitiosUpme\MVCupme\obj\Debug\MVCupme.pdb
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\MVCupme.dll.config
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\MVCupme.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\MVCupme.pdb
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Antlr3.Runtime.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\AspNet.Identity.OracleProvider.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\EntityFramework.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\EntityFramework.SqlServer.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Core.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Cookies.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Facebook.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Google.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.OAuth.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Twitter.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Web.Infrastructure.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Newtonsoft.Json.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Oracle.ManagedDataAccess.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Owin.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Simple.Data.Ado.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Simple.Data.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Simple.Data.Oracle.ManagedDataAccess.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\System.Web.Helpers.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\System.Web.Mvc.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\System.Web.Optimization.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\System.Web.Razor.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\System.Web.WebPages.Deployment.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\System.Web.WebPages.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\System.Web.WebPages.Razor.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\WebGrease.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\AspNet.Identity.OracleProvider.pdb
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\EntityFramework.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\EntityFramework.SqlServer.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Core.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\System.Web.Helpers.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\System.Web.Mvc.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\System.Web.Razor.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\System.Web.WebPages.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\System.Web.WebPages.Deployment.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\System.Web.WebPages.Razor.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\System.Web.Optimization.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Antlr3.Runtime.pdb
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Newtonsoft.Json.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Facebook.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Cookies.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.OAuth.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Google.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Twitter.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\EntityFramework.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\EntityFramework.SqlServer.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\System.Web.Helpers.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\System.Web.Mvc.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\System.Web.Razor.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\System.Web.WebPages.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\System.Web.Optimization.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\obj\Debug\MVCupme.csprojResolveAssemblyReference.cache
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\obj\Debug\MVCupme.dll
+C:\BACKUPCODIGO\SitiosUpme\MVCupme\obj\Debug\MVCupme.pdb
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\MVCupme.dll.config
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\MVCupme.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\MVCupme.pdb
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Antlr3.Runtime.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\AspNet.Identity.OracleProvider.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\EntityFramework.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\EntityFramework.SqlServer.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Core.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Cookies.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Facebook.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Google.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.OAuth.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Twitter.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Web.Infrastructure.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Newtonsoft.Json.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Owin.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Simple.Data.Ado.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Simple.Data.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Simple.Data.Oracle.ManagedDataAccess.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\System.Web.Helpers.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\System.Web.Mvc.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\System.Web.Optimization.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\System.Web.Razor.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\System.Web.WebPages.Deployment.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\System.Web.WebPages.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\System.Web.WebPages.Razor.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\WebGrease.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\AspNet.Identity.OracleProvider.pdb
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\EntityFramework.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\EntityFramework.SqlServer.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Core.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\System.Web.Helpers.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\System.Web.Mvc.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\System.Web.Razor.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\System.Web.WebPages.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\System.Web.WebPages.Deployment.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\System.Web.WebPages.Razor.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\System.Web.Optimization.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Antlr3.Runtime.pdb
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Newtonsoft.Json.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Facebook.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Cookies.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.OAuth.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Google.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Twitter.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\EntityFramework.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\EntityFramework.SqlServer.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\System.Web.Helpers.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\System.Web.Mvc.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\System.Web.Razor.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\System.Web.WebPages.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\System.Web.Optimization.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\obj\Debug\MVCupme.csprojResolveAssemblyReference.cache
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\obj\Debug\MVCupme.dll
+C:\upme\GDBSubEstaciones\gdb\Codigo\SitiosUpme\MVCupme\obj\Debug\MVCupme.pdb
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\MVCupme.dll.config
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\MVCupme.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\MVCupme.pdb
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Antlr3.Runtime.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\AspNet.Identity.OracleProvider.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\EntityFramework.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\EntityFramework.SqlServer.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Core.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Cookies.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Facebook.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Google.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.OAuth.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Twitter.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Web.Infrastructure.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Newtonsoft.Json.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Owin.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Simple.Data.Ado.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Simple.Data.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Simple.Data.Oracle.ManagedDataAccess.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\System.Web.Helpers.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\System.Web.Mvc.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\System.Web.Optimization.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\System.Web.Razor.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\System.Web.WebPages.Deployment.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\System.Web.WebPages.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\System.Web.WebPages.Razor.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\WebGrease.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\AspNet.Identity.OracleProvider.pdb
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\EntityFramework.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\EntityFramework.SqlServer.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Core.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\System.Web.Helpers.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\System.Web.Mvc.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\System.Web.Razor.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\System.Web.WebPages.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\System.Web.WebPages.Deployment.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\System.Web.WebPages.Razor.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\System.Web.Optimization.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Antlr3.Runtime.pdb
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Newtonsoft.Json.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Facebook.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Cookies.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.OAuth.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Google.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Twitter.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\EntityFramework.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\EntityFramework.SqlServer.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\System.Web.Helpers.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\System.Web.Mvc.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\System.Web.Razor.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\System.Web.WebPages.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\System.Web.Optimization.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\obj\Debug\MVCupme.csprojResolveAssemblyReference.cache
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\obj\Debug\MVCupme.dll
+C:\BACKUPCODIGO\SitiosUpme\SitiosUpme\MVCupme\obj\Debug\MVCupme.pdb
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\MVCupme.dll.config
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\MVCupme.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\MVCupme.pdb
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Antlr3.Runtime.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\AspNet.Identity.OracleProvider.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\EntityFramework.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\EntityFramework.SqlServer.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Core.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Cookies.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Facebook.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Google.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.OAuth.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Twitter.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Web.Infrastructure.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Newtonsoft.Json.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Owin.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Simple.Data.Ado.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Simple.Data.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Simple.Data.Oracle.ManagedDataAccess.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\System.Web.Helpers.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\System.Web.Mvc.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\System.Web.Optimization.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\System.Web.Razor.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\System.Web.WebPages.Deployment.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\System.Web.WebPages.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\System.Web.WebPages.Razor.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\WebGrease.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\AspNet.Identity.OracleProvider.pdb
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\EntityFramework.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\EntityFramework.SqlServer.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Core.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\System.Web.Helpers.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\System.Web.Mvc.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\System.Web.Razor.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\System.Web.WebPages.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\System.Web.WebPages.Deployment.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\System.Web.WebPages.Razor.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\System.Web.Optimization.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Antlr3.Runtime.pdb
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Newtonsoft.Json.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Facebook.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Cookies.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.OAuth.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Google.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.Twitter.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\EntityFramework.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\EntityFramework.SqlServer.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\Microsoft.Owin.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\System.Web.Helpers.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\System.Web.Mvc.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\System.Web.Razor.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\System.Web.WebPages.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\System.Web.Optimization.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\obj\Debug\MVCupme.csprojResolveAssemblyReference.cache
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\obj\Debug\MVCupme.dll
+C:\BACKUPCODIGO\1. SitiosUpme\MVCupme\obj\Debug\MVCupme.pdb
