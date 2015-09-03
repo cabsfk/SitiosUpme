@@ -87,7 +87,9 @@ function AprobarActualizacion(id) {
                         lyrVVEdit_T.updateFeature(featureCollectionVV.features[0], function (error, featureCollection, response2) {
                             if (featureCollection.success == true) {
                                 console.log(featureCollectionVV.features[0].properties.ID_CENTRO_POBLADO);
-                                query_actualizaciones.where("ID_CENTRO_POBLADO=" + featureCollectionVV.features[0].properties.ID_CENTRO_POBLADO).returnGeometry(false)
+                                var whereVV = "ID_CENTRO_POBLADO=" + featureCollectionVV.features[0].properties.ID_CENTRO_POBLADO +
+                                    " AND VIGENCIA=" + featureCollectionVV.features[0].properties.VIGENCIA;
+                                query_actualizaciones.where(whereVV).returnGeometry(false)
                                     .run(function (error, featureCollection) {
                                         console.log(featureCollection);
                                         if (featureCollection.features.length == 0) {
@@ -500,9 +502,10 @@ function MapearCentroPobladoEli() {
                             '</button>' +
                               '<strong class="primary-font">' + feature.properties.NOMBRE_SITIO + '</strong>,<br> '
                                            + feature.properties.MPIO_CNMBR + ', ' + feature.properties.DPTO_CNMBR + '.<br>' +
-                                          '<small>Clase:</small> ' + clase + '<br>' +
-                            '<small>Tipo Zona:</small> ' + tipo + '<br>' +
-                            '<small>Vigencia:</small>' + vigencia.substring(4, 6) + '-' + vigencia.substring(0, 4) + '<br>' +
+                            '<small>Clase: </small> ' + clase + '<br>' +
+                            '<small>Tipo Zona: </small> ' + tipo + '<br>' +
+                            '<small>Fuente: </small> ' + arrayFuentes[feature.properties.ID_FUENTE_CP] + '<br>' +
+                            '<small>Vigencia: </small>' + vigencia.substring(4, 6) + '-' + vigencia.substring(0, 4) + '<br>' +
                             '<small>Viviendas Urbanas:</small> ' + feature.properties.VIVIENDAS_URBANAS + '<br>' +
                             '<small>Viviendas Rurales:</small> ' + feature.properties.VIVIENDAS_RURALES + '<br>' +
                             '<small>Viviendas sin servicio Urbanas:</small> ' + feature.properties.VSS_URBANAS + '<br>' +
@@ -831,8 +834,8 @@ function MapearCentroPobladoTotal() {
             pointToLayer: function (feature, latlng) {
                 var clase, estilo;
                 if (feature.properties.ID_FUENTE_CP == 1) { estilo = geojsonMarkerDane;  }
-                else if (feature.properties.ID_FUENTE_CP == 2) { estilo = geojsonMarkerUpme; console.log("Upme2"); console.log(feature); }
-                else if (feature.properties.ID_FUENTE_CP == 3) { estilo = geojsonMarkerUpme; console.log("Upme3"); console.log(feature); }
+                else {estilo = geojsonMarkerUpme;  }
+                
                 CP = L.marker(latlng, estilo).bindLabel(feature.properties.NOMBRE_SITIO, { noHide: false, offset: [20, -45] });
                 clase = arrayclases[feature.properties.ID_CLASE];
                 tipo = arraytipos[feature.properties.ID_TIPO];
@@ -859,12 +862,13 @@ function MapearCentroPobladoTotal() {
                             + feature.properties.MPIO_CNMBR + ', ' + feature.properties.DPTO_CNMBR + '.<hr>' +
                             '<small>Clase:</small> ' + clase + '<br>' +
                             '<small>Tipo Zona:</small> ' + tipo + ' <br>' +
+                            '<small>Fuente:</small> ' + arrayFuentes[feature.properties.ID_FUENTE_CP] + '<br>' +
                             '<small>Vigencia:</small>' + vigencia.substring(4, 6) + '-' + vigencia.substring(0, 4) + '<br>' +
-                            '<small>Fecha creacion:</small> ' + FECHA_OFICIALIZACION + ' <br>' +
                             '<small>Viviendas Urbanas:</small> ' + V_URBANO + '<br>' +
                             '<small>Viviendas Rurales:</small> ' + V_RURAL + ' <br>' +
                             '<small>Viviendas sin servicio Urbanas:</small> ' + VSS_URBANO + ' <br>' +
                             '<small>Viviendas sin servicio Rurales:</small> ' + VSS_RURAL + '<br>' +
+                            '<small>Fecha creacion:</small> ' + FECHA_OFICIALIZACION + ' <br>' +
                         '</div>' +
                     '</div>' +
                 '</div>';

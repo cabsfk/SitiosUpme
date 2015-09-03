@@ -18,12 +18,10 @@ if (idUsuario != "") {
     $.getJSON("../../MVCupme/Home/UsrOrgJson?idusuario=" + idUsuario, function (data) {
         UsrOrgJson = data;
         $("#tituloOrganizacion").empty().append(UsrOrgJson[0].organizacion);
-        console.log("UsrOrgJson");
-        console.log(UsrOrgJson);
+      /*  console.log("UsrOrgJson");
+        console.log(UsrOrgJson);*/
     })
 }
-
-
 
 
 var geojsonMarkerDane = { icon: L.AwesomeMarkers.icon({ icon: 'home', prefix: 'fa', markerColor: 'purple' }), riseOnHover: true };
@@ -163,9 +161,7 @@ MapLayerLimitesDane.on('load', function (e) {
 *****************************************************/
 
 var query_clase = L.esri.Tasks.query({
-    //url: 'http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_BC/UPME_BC_Sitios_UPME_Vistas/MapServer/2'
     url: dominio + urlHostSUCons + 'MapServer/2'
-
 });
 
 query_clase.where("1=1").returnGeometry(false).run(function (error, featureCollection) {
@@ -179,6 +175,18 @@ query_clase.where("1=1").returnGeometry(false).run(function (error, featureColle
 });
 
 
+var arrayFuentes = [];
+var query_fuentes = L.esri.Tasks.query({
+    url: dominio + urlHostSUCons + 'MapServer/3'
+});
+
+query_fuentes.where("1=1").returnGeometry(false).run(function (error, featureCollection) {
+    $.each(featureCollection.features, function (index, value) {
+        arrayFuentes[value.properties.ID_FUENTE_CS] = value.properties.NOM_FUENTE_CS;
+    });    
+});
+
+
 function ActClaseVentEmer() {
     query_clase.where("1=1").returnGeometry(false).run(function (error, featureCollection) {
         $.each(featureCollection.features, function (index, value) {
@@ -188,15 +196,14 @@ function ActClaseVentEmer() {
 }
 
 var query_tipo = L.esri.Tasks.query({
-    //url: 'http://arcgis.simec.gov.co:6080/arcgis/rest/services/UPME_BC/UPME_BC_Sitios_UPME_Vistas/MapServer/4'
+    
     url: dominio + urlHostSUCons + 'MapServer/4'
 });
 
 query_tipo.where("1=1").returnGeometry(false).run(function (error, featureCollection) {
-
     $.each(featureCollection.features, function (index, value) {
         arraytipos[value.properties.ID_TIPO_CP] = value.properties.NOM_TIPO_CP;
-        console.log(value.properties.ID_TIPO_CP + '">' + value.properties.NOM_TIPO_CP);
+       // console.log(value.properties.ID_TIPO_CP + '">' + value.properties.NOM_TIPO_CP);
         if (value.properties.ID_TIPO_CP != 1) {
             $("#SectTipo").append('<option value="' + value.properties.ID_TIPO_CP + '">' + value.properties.NOM_TIPO_CP + '</option>');
             $("#EditSectTipo").append('<option value="' + value.properties.ID_TIPO_CP + '">' + value.properties.NOM_TIPO_CP + '</option>');
@@ -233,7 +240,7 @@ function clickmap(id, lyrname) {
             }
         });
     } else if (lyrname == "lyrTotalCentrosPoblados") {
-        console.log(id);
+     //   console.log(id);
         lyrTotalCentrosPoblados.eachLayer(function (marker) {
             if (marker.feature.properties.ID_CENTRO_POBLADO == id) {
 
@@ -319,8 +326,8 @@ $("#SecVigenciaAnio,#EditSecVigenciaAnio").change(function () {
     var currentId = $(this).attr('id');
     var tipo = currentId.substr(0, 4);
     var prevalue = tipo == "SecV" ? "" : tipo == "Edit" ? tipo.substr(0, 4) : tipo;
-    console.log('prevalue');
-    console.log(prevalue);
+   /* console.log('prevalue');
+    console.log(prevalue);*/
     var SelctAnio = $("#" + prevalue + "SecVigenciaAnio").val();
     if (SelctAnio == "") {
         $('#' + prevalue + 'SecVigenciaMes').val("");
@@ -345,7 +352,7 @@ $("#SecVigenciaAnio,#EditSecVigenciaAnio").change(function () {
 $("#SecVigenciaMes").prop('disabled', 'disabled');
 
 function getDataUser(idusuario) {
-    console.log(idusuario);
+  //  console.log(idusuario);
     var datauserjson = '';
     $.ajax({
         url: "../../MVCupme/Home/UsrOrgJson?idusuario=" + idusuario,

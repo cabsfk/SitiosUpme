@@ -109,11 +109,8 @@ function MapearCentroPoblado(Mpio, Dpto) {
             pointToLayer: function (feature, latlng) {
                 var clase, estilo;
                 if (feature.properties.ID_FUENTE_CP == 1) { estilo = geojsonMarkerDane; }
-                else if (feature.properties.ID_FUENTE_CP == 2) {
-                    estilo = geojsonMarkerUpme;
-                    console.log('upme1');
-                    console.log('upme1');
-
+                else {
+                    estilo = geojsonMarkerUpme;                   
                 }
                 CP = L.marker(latlng, estilo).bindLabel(feature.properties.NOMBRE_SITIO, { noHide: false, offset: [20, -45] });
                 var clase, tipo;
@@ -137,7 +134,17 @@ function MapearCentroPoblado(Mpio, Dpto) {
                          '<span class="fa fa-pencil" aria-hidden="true"></span><span class="fa fa-home" aria-hidden="true"></span>' +
                     '</button></center><br/>';
                 }
-                    
+                if (feature.properties.VIGENCIA != null) {
+                    var vigencia = feature.properties.VIGENCIA.toString();
+                    if (vigencia.substring(4, 6) == '') {
+                        vigencia = vigencia.substring(0, 4) ;
+                    } else {
+                        vigencia = vigencia.substring(4, 6) + '-' + vigencia.substring(0, 4);
+                    }
+
+                } else {
+                    var vigencia = '000000';
+                }
                 htmlpopup =
                 '<div class="panel panel-primary">' +
                     '<div class="panel-heading">Sitio UPME a Energizar</div>' +
@@ -147,12 +154,14 @@ function MapearCentroPoblado(Mpio, Dpto) {
                             '</button>' +
                             '<h5><strong  class="primary-font">' + feature.properties.NOMBRE_SITIO + '</strong><br><br>' +
                             '<small>Clase:</small> ' + clase + '<br>' +
+                            '<small>Fuente: </small> ' + arrayFuentes[feature.properties.ID_FUENTE_CP] + '<br>' +
+                            '<small>Vigencia: </small>' + vigencia+ '<br>' +
                             '<small>Tipo Zona:</small> '+tipo+' <br>' +
-                            '<small>Fecha creacion:</small> ' + FECHA_OFICIALIZACION + ' <br>' +
                             '<small>Viviendas Urbanas:</small> ' + V_URBANO + '<br>' +
                             '<small>Viviendas Rurales:</small> ' + V_RURAL + ' <br>' +
                             '<small>Viviendas sin servicio Urbanas:</small> ' + VSS_URBANO + ' <br>' +
                             '<small>Viviendas sin servicio Rurales:</small> ' + VSS_RURAL + '<br>' +
+                            '<small>Fecha creacion:</small> ' + FECHA_OFICIALIZACION + ' <br>' +
                              actualizarcp +
                         '</div>' +
                     '</div>' + 
@@ -323,8 +332,11 @@ function FunValidarUbi() {
         if (map.hasLayer(FeatureCentroPoblado)) {
             map.removeLayer(FeatureCentroPoblado);
         }
-    
-        FeatureCentroPoblado = new L.Marker([$("#InpLatitudCP").val(), $("#InpLongitudCP").val()], { icon: L.AwesomeMarkers.icon({ icon: 'university', prefix: 'fa', markerColor: 'red' }) });
+        
+        var latg = $("#InpLatitudCP").val();
+        var long = $("#InpLongitudCP").val();
+        var latlongflo = [parseFloat(latg.replace(",", ".")), parseFloat(long.replace(",", "."))];
+        FeatureCentroPoblado = new L.Marker(latlongflo, { icon: L.AwesomeMarkers.icon({ icon: 'university', prefix: 'fa', markerColor: 'red' }) });
         map.addLayer(FeatureCentroPoblado);
         
         map.panTo(FeatureCentroPoblado.getLatLng());
@@ -340,8 +352,8 @@ function FunValidarUbi() {
                 return false;
             }
         } else {
-            console.log(point);
-            console.log(turfCPDanemerge);
+            //console.log(point);
+            //console.log(turfCPDanemerge);
            
             if (turf.inside(point, FeatureMunicipio) && !turf.inside(point, turfCPDanemerge)) {
                 $("#PValidaUbi").removeClass("text-danger").addClass("text-success").empty().append("La Ubicacion es Valida");
@@ -938,7 +950,17 @@ function MapearCentroPobladoEli() {
                 var clase,tipo;
                 clase = arrayclases[feature.properties.ID_CLASE]; 
                 tipo = arraytipos[feature.properties.ID_TIPO];
+                if (feature.properties.VIGENCIA != null) {
+                    var vigencia = feature.properties.VIGENCIA.toString();
+                    if (vigencia.substring(4, 6) == '') {
+                        vigencia = vigencia.substring(0, 4) ;
+                    } else {
+                        vigencia = vigencia.substring(4, 6) + '-' + vigencia.substring(0, 4) ;
+                    }
 
+                } else {
+                    var vigencia = '000000';
+                }
                 htmlpopup =
                 '<div class="panel panel-primary">' +
                     '<div class="panel-heading">Sitio UPME a Energizar</div>' +
@@ -949,6 +971,8 @@ function MapearCentroPobladoEli() {
                             '<h5> <strong>' + feature.properties.NOMBRE_SITIO + '</strong><br> '
                             + feature.properties.MPIO_CNMBR + ', ' + feature.properties.DPTO_CNMBR + '.<hr>' +
                             '<small>Clase:</small> ' + clase + '<br>' +
+                            '<small>Fuente: </small> ' + arrayFuentes[feature.properties.ID_FUENTE_CP] + '<br>' +
+                            '<small>Vigencia: </small>' + vigencia+ '<br>' +
                             '<small>Tipo Zona:</small> ' + tipo + '<br>' +
                             '<small>Viviendas Urbanas:</small> ' + feature.properties.VIVIENDAS_URBANAS + '<br>' +
                             '<small>Viviendas Rurales:</small> ' + feature.properties.VIVIENDAS_RURALES + '<br>' +
@@ -1277,6 +1301,7 @@ function MapearCentroPobladoTotal() {
                                 'V_URBANO',
                                 'V_RURAL',
                                 'VSS_URBANO',
+                                'VIGENCIA',
                                 'VSS_RURAL',
                                 'MPIO_CNMBR',
                                 'DPTO_CNMBR']);
@@ -1287,8 +1312,8 @@ function MapearCentroPobladoTotal() {
             pointToLayer: function (feature, latlng) {
                 var clase, estilo,tipo;
                 if (feature.properties.ID_FUENTE_CP == 1) { estilo = geojsonMarkerDane; }
-                else if (feature.properties.ID_FUENTE_CP == 2) { estilo = geojsonMarkerUpme; }
-                else if (feature.properties.ID_FUENTE_CP == 3) { estilo = geojsonMarkerUpme; }
+                else { estilo = geojsonMarkerUpme; }
+                
 
                 CP = L.marker(latlng, estilo).bindLabel(feature.properties.NOMBRE_SITIO, { noHide: false, offset: [20, -45] });
 
@@ -1302,6 +1327,17 @@ function MapearCentroPobladoTotal() {
                 var V_RURAL = (feature.properties.V_RURAL == "Null" || feature.properties.V_RURAL == null) ? 0 : feature.properties.V_RURAL;
                 var VSS_URBANO = (feature.properties.VSS_URBANO == "Null" || feature.properties.VSS_URBANO == null) ? 0 : feature.properties.VSS_URBANO;
                 var VSS_RURAL = (feature.properties.VSS_RURAL == "Null" || feature.properties.VSS_RURAL == null) ? 0 : feature.properties.VSS_RURAL;
+                if (feature.properties.VIGENCIA != null) {
+                    var vigencia = feature.properties.VIGENCIA.toString();
+                    if(vigencia.substring(4, 6)==''){
+                        vigencia=  vigencia.substring(0, 4) ;
+                    }else {
+                        vigencia = vigencia.substring(4, 6) + '-' + vigencia.substring(0, 4) ;
+                    }
+                    
+                } else {
+                    var vigencia = '000000';
+                }
                 htmlpopup =
                 '<div class="panel panel-primary">' +
                     '<div class="panel-heading">Sitio UPME a Energizar</div>' +
@@ -1312,12 +1348,14 @@ function MapearCentroPobladoTotal() {
                             '<h5><strong  class="primary-font">' + feature.properties.NOMBRE_SITIO + '</strong><br>'
                             + feature.properties.MPIO_CNMBR + ', ' + feature.properties.DPTO_CNMBR + '.<hr>' +
                             '<small>Clase:</small> ' + clase + '<br>' +
+                            '<small>Fuente: </small> ' + arrayFuentes[feature.properties.ID_FUENTE_CP] + '<br>' +
+                            '<small>Vigencia: </small>' + vigencia + '<br>' +        
                             '<small>Tipo Zona:</small> ' + tipo + ' <br>' +
-                            '<small>Fecha creacion:</small> ' + FECHA_OFICIALIZACION + ' <br>' +
                             '<small>Viviendas Urbanas:</small> ' + V_URBANO + '<br>' +
                             '<small>Viviendas Rurales:</small> ' + V_RURAL + ' <br>' +
                             '<small>Viviendas sin servicio Urbanas:</small> ' + VSS_URBANO + ' <br>' +
                             '<small>Viviendas sin servicio Rurales:</small> ' + VSS_RURAL + '<br>' +
+                            '<small>Fecha creacion:</small> ' + FECHA_OFICIALIZACION + ' <br>' +
                         '</div>' +
                     '</div>' +
                 '</div>';
