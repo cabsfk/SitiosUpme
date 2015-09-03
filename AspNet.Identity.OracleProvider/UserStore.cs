@@ -10,6 +10,9 @@ namespace AspNet.Identity.OracleProvider
     using Microsoft.AspNet.Identity;
     using Repositories;
     using Exceptions;
+    using System.Data.Entity;
+    using Oracle.ManagedDataAccess.Client;
+    
 
     public class UserStore :
         IUserStore<IdentityUser>,
@@ -25,6 +28,7 @@ namespace AspNet.Identity.OracleProvider
         private readonly UserLoginsRepository _userLoginsRepository;
         private readonly RoleRepository _roleRepository;
         private readonly UserRolesRepository _userRolesRepository;
+        private readonly OracleDataContext db;
 
         public IQueryable<IdentityUser> Users
         {
@@ -34,11 +38,7 @@ namespace AspNet.Identity.OracleProvider
             }
         }
 
-        public UserStore()
-            : this(new OracleDataContext())
-        {
-        }
-
+        
         public UserStore(OracleDataContext database)
         {
             // TODO: Compare with EntityFramework provider.
@@ -117,6 +117,10 @@ namespace AspNet.Identity.OracleProvider
                 throw new ArgumentNullException("user");
             }
 
+            if (user.Nombre == null)
+            {
+                user.Nombre = user.UserName ;
+            }
             _userRepository.Update(user);
 
             return Task.FromResult<object>(null);
@@ -354,9 +358,29 @@ namespace AspNet.Identity.OracleProvider
             {
                 throw new ArgumentNullException("user");
             }
+            //JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP JP
+            if (user.Id == null)
+            {
+                user.PwdHash = passwordHash;
+/*                Database.ExecuteScalarQuery(
+                    "UPDATE MUB_USUARIOS SET PWDHASH = :passwordHash WHERE EMAIL = :email ",
+                    new OracleParameter { ParameterName = ":passwordHash", Value = passwordHash, OracleDbType = OracleDbType.Varchar2 },
+                    new OracleParameter { ParameterName = ":email", Value = user.Email.ToString(), OracleDbType = OracleDbType.Varchar2 }); */
+            }
+            else
+            {
+                Database.ExecuteScalarQuery(
+                    "UPDATE MUB_USUARIOS SET PWDHASH = :passwordHash WHERE ID_USUARIO = :userid ",
+                    new OracleParameter { ParameterName = ":passwordHash", Value = passwordHash, OracleDbType = OracleDbType.Varchar2 },
+                    new OracleParameter { ParameterName = ":userid", Value = Convert.ToInt64(user.Id.ToString()), OracleDbType = OracleDbType.Int64 });
+            }
+            
 
-            user.PwdHash = passwordHash;
+            
 
+
+           // user.PwdHash = passwordHash;
+            
             return Task.FromResult<object>(null);
         }
 

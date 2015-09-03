@@ -7,6 +7,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MVCupme.Models;
+using System.Data.Entity;
+using MVCupme;
+using MVCupme.Controllers;
 
 namespace MVCupme.Controllers
 {
@@ -15,6 +18,7 @@ namespace MVCupme.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        
 
         public ManageController()
         {
@@ -32,9 +36,9 @@ namespace MVCupme.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set
-            {
-                _signInManager = value;
+            private set 
+            { 
+                _signInManager = value; 
             }
         }
 
@@ -55,10 +59,10 @@ namespace MVCupme.Controllers
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
+                message == ManageMessageId.ChangePasswordSuccess ? "Su Clave ha sido Cambiada exitosamente."
+                : message == ManageMessageId.SetPasswordSuccess ? "Su clave ha sido definida."
                 : message == ManageMessageId.SetTwoFactorSuccess ? "Your two-factor authentication provider has been set."
-                : message == ManageMessageId.Error ? "An error has occurred."
+                : message == ManageMessageId.Error ? "ADVERTENCIA! Ha ocurrido un error al cambiar la Clave."
                 : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
                 : "";
@@ -67,11 +71,52 @@ namespace MVCupme.Controllers
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
-                PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
+                //PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 //TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
-                Logins = await UserManager.GetLoginsAsync(userId),
+                //Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
+
+            CxUsr dbUsr = new CxUsr();
+
+            if (GlobalVariables.idUsuario == null || GlobalVariables.idUsuario == "" || GlobalVariables.idOrganizacion == null)
+            {
+                var usr_actual = User.Identity.GetUserName();
+                foreach (var item in dbUsr.MUB_USUARIOS.Where(u => u.EMAIL == User.Identity.Name.ToString()))
+                {
+                    GlobalVariables.idUsuario = item.ID_USUARIO.ToString();
+                    GlobalVariables.idOrganizacion = item.ID_ORGANIZACION.ToString();
+                }
+            }
+
+
+            long idusr = Convert.ToInt32(GlobalVariables.idUsuario);
+            long idModulo = Convert.ToInt32(GlobalVariables.idModulo);
+
+            var tmpUsr = dbUsr.MUB_USUARIOS.Where(u => u.ID_USUARIO == idusr);
+            foreach (var item in tmpUsr)
+            {
+                string nom_Usuario = item.NOMBRE.ToString();
+                @ViewBag.Nombre = nom_Usuario;
+
+            }
+            var tmpOrg = dbUsr.MUB_USUARIOS.Where(u => u.ID_USUARIO == idusr).Include(u => u.MUB_ORGANIZACIONES);
+            foreach (var item in tmpOrg)
+            {
+                string nom_Organizacion = item.MUB_ORGANIZACIONES.RAZON_SOCIAL.ToString();
+                @ViewBag.Organizacion = nom_Organizacion;
+            }
+            var tmpRol = dbUsr.MUB_USUARIOS_ROLES.Where(u => u.ID_USUARIO == idusr).Include(m => m.MUB_ROL).Where(r => r.MUB_ROL.ID_MODULO == idModulo).Include(d => d.MUB_ROL.MUB_MODULOS);
+            foreach (var item in tmpRol)
+            {
+                string nom_rol = item.MUB_ROL.NOMBRE.ToString();
+                @ViewBag.Perfil = nom_rol;
+            }
+
+
+            @ViewBag.Usuario = User.Identity.Name.ToString();
+            //@ViewBag.Perfil;
+
             return View(model);
         }
 
@@ -331,7 +376,7 @@ namespace MVCupme.Controllers
             base.Dispose(disposing);
         }
 
-        #region Helpers
+#region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -382,6 +427,6 @@ namespace MVCupme.Controllers
             Error
         }
 
-        #endregion
+#endregion
     }
 }

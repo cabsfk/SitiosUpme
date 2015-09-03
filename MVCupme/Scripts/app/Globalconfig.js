@@ -66,7 +66,7 @@ if (Nombrepagina == "") {
 waitingDialog.show();
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
-    if (idUsuario != '') {
+    if (pagina.length > 5) {   
         div.innerHTML += '<i ><img src="' + prefijo + 'images/leyend/creacionpunto.png"  height="20px"></i>Sitio UPME en creación<br>';
         div.innerHTML += '<i ><img src="' + prefijo + 'images/leyend/SinAprobar.png" height="20px"></i> Sitio Upme Sin Aprobar<br>';
     }

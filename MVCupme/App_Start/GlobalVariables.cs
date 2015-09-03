@@ -24,6 +24,18 @@ namespace MVCupme.Controllers
                 HttpContext.Current.Application["idUsuario"] = value;
             }
         }
+        public static string idOrganizacion
+        {
+
+            get
+            {
+                return HttpContext.Current.Application["idOrganizacion"] as string;
+            }
+            set
+            {
+                HttpContext.Current.Application["idOrganizacion"] = value;
+            }
+        }
         public static int idModulo
         {
 

@@ -17,17 +17,17 @@ namespace AspNet.Identity.OracleProvider.Repositories
             _db = oracleContext;
         }
 
-        public string TableName { get { return "MUB_USUARIOS"; } }
-        public string IdCol { get { return "ID_USUARIO"; } }
-        public string NombreCol { get { return "NOMBRE"; } }
-        public string CargoCol { get { return "CARGO"; } }
-        public string DireccionCol { get { return "DIRECCION"; } }
-        public string TelefonoCol { get { return "TELEFONO"; } }
-        public string CelularCol { get { return "CELULAR"; } }
-        public string ExtensionCol { get { return "EXTENSION"; } }
-        public string FaxCol { get { return "FAX"; } }
-        public string EmailCol { get { return "EMAIL"; } }
-        public string EstadoCol { get { return "ESTADO"; } }
+        public string TableName { get { return "MUB_USUARIOS"; } }      //  0
+        public string IdCol { get { return "ID_USUARIO"; } }            //  1
+        public string NombreCol { get { return "NOMBRE"; } }            //  2
+        public string CargoCol { get { return "CARGO"; } }              //  3
+        public string DireccionCol { get { return "DIRECCION"; } }      //  4
+        public string TelefonoCol { get { return "TELEFONO"; } }        //  5
+        public string CelularCol { get { return "CELULAR"; } }          //  6
+        public string ExtensionCol { get { return "EXTENSION"; } }      //  7
+        public string FaxCol { get { return "FAX"; } }                  //  8
+        public string EmailCol { get { return "EMAIL"; } }              //  9
+        public string EstadoCol { get { return "ESTADO"; } }            //  10
         public string PwdHashCol { get { return "PWDHASH"; } }
 
         public string RolesTableName { get { return "MUB_USUARIOS_ROLES"; } }
@@ -38,6 +38,7 @@ namespace AspNet.Identity.OracleProvider.Repositories
         private string RolNombreCol { get { return "NOMBRE"; } }
         private string RolIdCol { get { return "ID_ROL"; } }
         private string RolAplicacionCol { get { return "ID_MODULO"; } }
+        public string IdOrganizacionCol { get { return "ID_ORGANIZACION"; } }
 
 
 
@@ -80,9 +81,9 @@ namespace AspNet.Identity.OracleProvider.Repositories
 
             return _db.ExecuteNonQuery(
                 "INSERT INTO \""+TableName+"\" ("+PwdHashCol+", "+NombreCol+", "+EmailCol+", "+CargoCol+", " +
-                " "+DireccionCol+", "+TelefonoCol+", "+CelularCol+","+ExtensionCol+","+FaxCol+","+EstadoCol+") VALUES " +
+                " " + DireccionCol + ", " + TelefonoCol + ", " + CelularCol + "," + ExtensionCol + "," + FaxCol + "," + EstadoCol + "," + IdOrganizacionCol + ") VALUES " +
                 "(:pwdhash, :nombre, :email, :cargo, :direccion," +
-                " :telefono, :celular, :extension, :fax, :estado)",
+                " :telefono, :celular, :extension, :fax, :estado, :IdOrganizacion)",
                 new OracleParameter { ParameterName = ":pwdhash", Value = user.PwdHash, OracleDbType = OracleDbType.Varchar2, Direction = ParameterDirection.Input },
                 new OracleParameter { ParameterName = ":nombre", Value = user.Nombre, OracleDbType = OracleDbType.Varchar2, Direction = ParameterDirection.Input },
                 new OracleParameter { ParameterName = ":email", Value = user.Email, OracleDbType = OracleDbType.Varchar2, Direction = ParameterDirection.Input },
@@ -92,7 +93,8 @@ namespace AspNet.Identity.OracleProvider.Repositories
                 new OracleParameter { ParameterName = ":celular", Value = user.Celular, OracleDbType = OracleDbType.Varchar2, Direction = ParameterDirection.Input },
                 new OracleParameter { ParameterName = ":extension", Value = user.Extension, OracleDbType = OracleDbType.Varchar2, Direction = ParameterDirection.Input },
                 new OracleParameter { ParameterName = ":fax", Value = user.Fax, OracleDbType = OracleDbType.Varchar2, Direction = ParameterDirection.Input },
-                new OracleParameter { ParameterName = ":estado", Value = user.Estado? 1 : 0, OracleDbType = OracleDbType.Int16, Direction = ParameterDirection.Input });
+                new OracleParameter { ParameterName = ":estado", Value = user.Estado? 1 : 0, OracleDbType = OracleDbType.Int16, Direction = ParameterDirection.Input },
+                new OracleParameter { ParameterName = ":IdOrganizacion", Value = user.ID_ORGANIZACION , OracleDbType = OracleDbType.Long, Direction = ParameterDirection.Input });
         }
 
         public int Update(IdentityUser user)
@@ -191,7 +193,13 @@ namespace AspNet.Identity.OracleProvider.Repositories
                     Id = row[IdCol].ToString(),
                     UserName = row[EmailCol].ToString(),
                     PwdHash = row[PwdHashCol].ToString().HasValue() ? row[PwdHashCol].ToString() : null,
-                    Estado = int.Parse(row[EstadoCol].ToString()) == 1
+                    Estado = int.Parse(row[EstadoCol].ToString()) == 1,
+                    Cargo = row[EmailCol].ToString(),
+                    Direccion = row[DireccionCol].ToString(),
+                    Telefono = row[TelefonoCol].ToString(),
+                    Celular = row[CelularCol].ToString(),
+                    Extension = row[ExtensionCol].ToString(),
+                    Fax = row[FaxCol].ToString()
                 };
             }
 
