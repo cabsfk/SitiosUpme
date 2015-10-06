@@ -41,7 +41,7 @@ namespace MVCupme
                       "~/Scripts/libs/turfjs/turf.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/esrileaflet").Include(
-                      "~/Scripts/libs/esri-leaflet/esri-leaflet.js",
+                      "~/Scripts/libs/esri-leaflet/esri-leaflet-src.js",
                       "~/Scripts/libs/leaflet/easy-button.js",
                       "~/Scripts/libs/esri-leaflet/esri-leaflet-clustered-feature-layer.js"));
 
@@ -59,8 +59,9 @@ namespace MVCupme
             bundles.Add(new ScriptBundle("~/bundles/appMapGlobal").Include(
                 "~/Scripts/app/Globalconfig.js"));
 
-
-
+            bundles.Add(new ScriptBundle("~/bundles/Nota").Include(
+                "~/Scripts/app/NotaAclaratoria.js"));
+            
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Scripts/libs/bootstrap-3.3.1/dist/css/bootstrap.min.css",
                       "~/Content/css/jquery-iu.css",

@@ -139,17 +139,14 @@
                     <li><a href="#">2</a></li>
                     <li class="active"><a href="#">3</a></li>
                 </ul>
-                <form style="max-height:280px;overflow:scroll;">
-                    <div class="form-group">
+                <form style="max-height:400px;overflow:scroll;">
                         <label for="InpNomCP">Ingrese el nombre Sitio Upme:</label>
                         <input type="text" class="form-control" id="InpNomCP" placeholder="">
-                    </div>
-                    <div class="form-group">
+                    
                         <label for="SectTipo">Seleccione Tipo Zona:</label>
                         <select class="form-control" id="SectTipo">
                             <option value=""></option>
                         </select>
-                    </div>
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="form-group">
@@ -181,33 +178,31 @@
                                </div>
                                </div>
                             </div>
-                            <div class="form-group">
                                 <label for="SectClase">Seleccione la Clase :</label>
                                 <select class="form-control" id="SectClase">
                                     <option value=""></option>
                                 </select>
-                            </div>
-                            <div class="form-group hide" id="FormInpViviendasU">
+                            <div class="hide" id="FormInpViviendasU">
                                 <label for="InpViviendasU">Ingrese el total de viviendas URBANAS:</label>
                                 <input type="text" class="form-control" id="InpViviendasU"  onkeypress="NumPositivo(event)"  maxlength="6"   placeholder="">
                             </div>
 
-                            <div class="form-group hide" id="FormInpViviendasSSU">
+                            <div class=" hide" id="FormInpViviendasSSU">
                                 <label for="InpViviendasSSU">Ingrese el total de viviendas sin servicio URBANAS:</label>
                                 <input type="text" class="form-control" id="InpViviendasSSU"  onkeypress="NumPositivo(event)"  maxlength="6"   placeholder="">
                             </div>
-                            <div class="form-group hide" id="FormInpViviendasR">
+                            <div class=" hide" id="FormInpViviendasR">
                                 <label for="InpViviendasR">Ingrese el total de viviendas RURAL:</label>
                                 <input type="text" class="form-control" id="InpViviendasR"  onkeypress="NumPositivo(event)"  maxlength="6"  placeholder="">
                             </div>
-                            <div class="form-group hide" id="FormInpViviendasSSR">
+                            <div class=" hide" id="FormInpViviendasSSR">
                                 <label for="InpViviendasSSR">Ingrese el total de viviendas sin servicio RURAL:</label>
                                 <input type="text" class="form-control" id="InpViviendasSSR"  onkeypress="NumPositivo(event)"  maxlength="6"  placeholder=" ">
                             </div>
-                            <div class="form-group">
+                            
                                 <label for="InpObservacion">Observacion:</label>
                                 <textarea class="form-control" id="InpObservacion" placeholder=""></textarea>
-                            </div>
+                            
                 </form>
                 <hr />
                 <nav>
@@ -333,17 +328,14 @@
             <h3 class="panel-title">Edicion Data de Sitio Upme.</h3>
         </div>
         <div class="panel-body">
-            <form style="max-height:280px;overflow:scroll;">
-                <div class="form-group">
+            <form style="max-height:290px;overflow:scroll;">
                     <label for="EditInpNomCP">Ingrese el nombre Sitio Upme:</label>
                     <input type="text" class="form-control" id="EditInpNomCP" placeholder="">
-                </div>
-                <div class="form-group">
+                
                     <label for="EditSectTipo">Seleccione la Tipo Zona:</label>
                     <select class="form-control" id="EditSectTipo">
                         <option value=""></option>
                     </select>
-                </div>
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="form-group">
@@ -376,39 +368,37 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
                     <label for="EditSectClase">Seleccione la Clase Zona:</label>
                     <select class="form-control" id="EditSectClase">
                         <option value=""></option>
                     </select>
-                </div>
-                <div class="form-group hide" id="EditFormInpViviendasU">
+                <div class=" hide" id="EditFormInpViviendasU">
                     <label for="EditInpViviendasU">Ingrese el total de viviendas URBANAS:</label>
                     <input type="text" class="form-control" id="EditInpViviendasU"  onkeypress="NumPositivo(event)"  maxlength="6"  placeholder="">
                 </div>
                 
-                <div class="form-group hide" id="EditFormInpViviendasSSU">
+                <div class=" hide" id="EditFormInpViviendasSSU">
                     <label for="EditInpViviendasSSU">Ingrese el total de viviendas sin servicio URBANAS:</label>
                     <input type="text" class="form-control" id="EditInpViviendasSSU"  onkeypress="NumPositivo(event)"  maxlength="6"  placeholder="">
                 </div>
-                <div class="form-group hide" id="EditFormInpViviendasR">
+                <div class=" hide" id="EditFormInpViviendasR">
                     <label for="EditInpViviendasR">Ingrese el total de viviendas RURAL:</label>
                     <input type="text" class="form-control" id="EditInpViviendasR"  onkeypress="NumPositivo(event)"  maxlength="6"  placeholder="">
                 </div>
-                <div class="form-group hide" id="EditFormInpViviendasSSR">
+                <div class=" hide" id="EditFormInpViviendasSSR">
                     <label for="EditInpViviendasSSR">Ingrese el total de viviendas sin servicio RURAL:</label>
                     <input type="text" class="form-control" id="EditInpViviendasSSR"  onkeypress="NumPositivo(event)"  maxlength="6"  placeholder=" ">
                 </div>
-                <div class="form-group">
+                
                     <label for="EditInpObservacion">Observacion:</label>
                     <textarea class="form-control" id="EditInpObservacion" placeholder=""></textarea>
-                </div>
+                
             </form>
             <br />
-            <button class="btn btn-info pull-right " type="button" onclick="SaveFeature()">
+            <button class="btn btn-info pull-right btn-xs " type="button" onclick="SaveFeature()">
                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Guardar
             </button>
-            <button class="btn btn-danger pull-left " type="button" onclick="CancelEditFeature()">
+            <button class="btn btn-danger pull-left btn-xs " type="button" onclick="CancelEditFeature()">
                 <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Cancelar
             </button>
         </div>
@@ -416,60 +406,63 @@
 </div>
 
 
-    <div id="carousel-panel-generic" class="col-sm-3 col-md-3">
-        <div id="myCarousel" class="carousel slide">
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-            </ol>
-            <!-- Carousel items -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="row-fluid">
-                        <div class="col-sm-6 col-md-6" id="BaseESRIStreets" value="Streets">
-                            <a href="#" class="thumbnail">
-                                <img src="~/images/baselayers/calles.PNG" style="max-width:100%;">
-                                <div class="carousel-caption"><center><h6>Calles</h6></center></div>
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-6" id="BaseESRISatellite" value="Imagery">
-                            <a href="#" class="thumbnail">
-                                <img src="~/images/baselayers/satelite.PNG" style="max-width:100%;">
-                                <div class="carousel-caption"><center><h6 style="color:rgba(255, 255, 255,1)">Satelite</h6></center></div>
-                            </a>
-                        </div>
-                    </div><!--/row-fluid-->
-                </div><!--/item-->
-                <div class="item">
-                    <div class="row-fluid">
-                        <div class="col-sm-6 col-md-6" id="BaseESRITopo" value="Topographic">
-                            <a href="#" class="thumbnail">
-                                <img src="~/images/baselayers/topografic.PNG" style="max-width:100%;">
-                                <div class="carousel-caption"><center><h6>Topográfico</h6></center></div>
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-6" id="BaseOSM" value="OSM">
-                            <a href="#" class="thumbnail">
-                                <img src="~/images/baselayers/OSM.PNG" style="max-width:100%;">
-                                <div class="carousel-caption"><center><h6>OSM</h6></center></div>
-                            </a>
-                        </div>
 
-                    </div><!--/row-fluid-->
-                </div><!--/item-->
-            </div><!--/carousel-inner-->
+<div id="carousel-panel-generic" class="col-sm-3 col-md-3">
+    <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="row-fluid">
+                    <div class="col-sm-6 col-md-6" id="BaseESRIStreets" value="Streets">
+                        <a href="#" class="thumbnail">
+                            <img src="~/images/baselayers/calles.PNG" style="max-width:100%;">
+                            <div class="carousel-caption"><center><h6>Calles</h6></center></div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-6" id="BaseESRISatellite" value="Imagery">
+                        <a href="#" class="thumbnail">
+                            <img src="~/images/baselayers/satelite.PNG" style="max-width:100%;">
+                            <div class="carousel-caption"><center><h6 style="color:rgba(255, 255, 255,1)">Satelite</h6></center></div>
+                        </a>
+                    </div>
+                </div><!--/row-fluid-->
+            </div><!--/item-->
+            <div class="item">
+                <div class="row-fluid">
+                    <div class="col-sm-6 col-md-6" id="BaseÜPME" value="UPME">
+                        <a href="#" class="thumbnail">
+                            <img src="~/images/baselayers/UPME.PNG" style="max-width:100%;">
+                            <div class="carousel-caption"><center><h6>UPME</h6></center></div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-6" id="BaseOSM" value="OSM">
+                        <a href="#" class="thumbnail">
+                            <img src="~/images/baselayers/OSM.PNG" style="max-width:100%;">
+                            <div class="carousel-caption"><center><h6>OSM</h6></center></div>
+                        </a>
+                    </div>
+                </div><!--/row-fluid-->
+            </div><!--/item-->
+        </div><!--/carousel-inner-->
 
-            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-        </div><!--/myCarousel-->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div><!--/myCarousel-->
+</div>
+    
+   <div class='mouse-position panel'>
+    <div class="panel-body">
+        <h6> <b id='mousemove'><b /></h6>
     </div>
-        <div class='mouse-position'>
-            <b id='mousemove'><b />
-        </div>
+</div>
         @Scripts.Render("~/bundles/appMapGlobal")
         @Scripts.Render("~/bundles/appMap")
 }

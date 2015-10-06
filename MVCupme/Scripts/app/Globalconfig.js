@@ -1,10 +1,10 @@
 ﻿
 var dominio = "http://arcgis.simec.gov.co:6080"; //Dominio del arcgis server  http://localhost:6080
+var urlUPMEbase = '/arcgis/rest/services/UPME_BC/UPME_BC_Base_Cartografica/';
 var urlHostSUEdit = "/arcgis/rest/services/UPME_BC/UPME_BC_Sitios_UPME_Edicion/";
 var urlHostSUCons = "/arcgis/rest/services/UPME_BC/UPME_BC_Sitios_UPME_Vistas/";
 var urlHostDP = "/arcgis/rest/services/UPME_BC/UPME_BC_Sitios_UPME_Division_Politica/";
-
-
+var notaAclaratoria='De conformidad con el Decreto 1122 de 2008, la UPME se permite disponer esta herramienta para la recolección de la información correspondiente a la ubicación geográfica de los SITIOS así como las viviendas totales y viviendas que no cuentan con el servicio de energía eléctrica, tanto urbano como rural.Esta herramienta es una ayuda para que las Entidades Territoriales reporten información, produciéndose una capa propia de la UPME quien validará con otras fuentes la ubicación espacial de las localidades, para conseguir mayor calidad en la información para el Planeamiento de la Expansión de Cobertura de Energía Eléctrica.'
 
 var buffetCP = 300;
 var ordenarGeojson; //global de orden de capa de centrso poblados
@@ -53,16 +53,11 @@ new L.Control.Zoom({ position: 'topright' }).addTo(map);
 //CONFIGURACION DE FORMATO
 **********************************/
 var legend = L.control({ position: 'bottomright' });
-var pagina = document.URL.split("/");
-var Nombrepagina = pagina[pagina.length - 1];
-Nombrepagina = Nombrepagina.replace("#", "");
-var prefijo = "";
-if (Nombrepagina == "") {
-    prefijo = "./";
-} else {
-    prefijo = "../";
-}
 
+var pagina = document.URL.split("/");
+var prefijo = pagina[0] + '/' + pagina[1] + '/' + pagina[2] + '/' + pagina[3] + '/';
+
+//console.log(prefijo);
 waitingDialog.show();
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
@@ -95,31 +90,53 @@ $('.carousel').carousel({
     interval: 7000
 });
 
-var OpenMapSurfer_Roads = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+var OpenMapSurfer_Roads = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.{ext}', {
+    type: 'map',
+    ext: 'jpg',
+    attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    subdomains: '1234'
+});
+var UPME_Base = L.tileLayer(dominio+urlUPMEbase+"MapServer/tile/{z}/{y}/{x}", {
+    type: 'map',
+    hideLogo: false,
+    logoPosition: 'bottomright',
+    minZoom: 5,
     maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    subdomains: ['server', 'services'],
+    attribution: 'UPME BASE LAYER'    
 });
 
-var LyrBase = L.esri.basemapLayer('Streets').addTo(map);;
-var LyrLabels;
+var LyrBase = L.esri.basemapLayer('Imagery').addTo(map);
+var LyrLabels = L.esri.basemapLayer('ImageryLabels').addTo(map);
 
 function setBasemap(basemap) {
     if (map.hasLayer(LyrBase)) {
         map.removeLayer(LyrBase);
     }
-    if (basemap != "OSM") {
-        LyrBase = L.esri.basemapLayer(basemap);
-    } else {
+    if (basemap == "OSM") {
         LyrBase = OpenMapSurfer_Roads;
+    } else if (basemap == "UPME") {
+        LyrBase = UPME_Base;
+    }
+    else {
+        LyrBase = L.esri.basemapLayer(basemap);
     }
     map.addLayer(LyrBase);
+    if (map.hasLayer(LyrLabels)) {
+        map.removeLayer(LyrLabels);
+    }
+
+    if (basemap === 'ShadedRelief' || basemap === 'Oceans' || basemap === 'Gray' || basemap === 'DarkGray' || basemap === 'Imagery' || basemap === 'Terrain') {
+        LyrLabels = L.esri.basemapLayer(basemap + 'Labels');
+        map.addLayer(LyrLabels);
+    }
     $(".esri-leaflet-logo").hide();
     $(".leaflet-control-attribution").hide();
-}
+};
 
-$("#BaseESRIStreets, #BaseESRISatellite, #BaseESRITopo, #BaseOSM").click(function () {
+$("#BaseESRIStreets, #BaseESRISatellite, #BaseÜPME, #BaseOSM").click(function () {
     setBasemap($(this).attr('value'));
-})
+});
 
 $(".esri-leaflet-logo").hide();
 $(".leaflet-control-attribution").hide();
@@ -148,7 +165,8 @@ $(function () {
         L.easyButton(promptIcon[i], functions[i], hoverText[i])
     } (i);
 });
-var MapLayerLimitesDane = L.esri.dynamicMapLayer(dominio + urlHostDP + 'MapServer', {
+var MapLayerLimitesDane = L.esri.dynamicMapLayer({
+    url:dominio + urlHostDP + 'MapServer/',
     layers: [2, 3]
 }).addTo(map);
 
@@ -259,7 +277,7 @@ function zoomCP(x, y) {
 var mousemove = document.getElementById('mousemove');
 
 map.on('mousemove', function (e) {
-    window[e.type].innerHTML = 'LON:' + e.latlng.lng.toFixed(6) + '   LAT:' + e.latlng.lat.toFixed(6);
+    window[e.type].innerHTML = 'Long:' + e.latlng.lng.toFixed(6) + '   Lat:' + e.latlng.lat.toFixed(6);
 });
 
 function ClaseZona(valor, pretext) {
@@ -364,4 +382,3 @@ function getDataUser(idusuario) {
     });
     return datauserjson;
 }
-

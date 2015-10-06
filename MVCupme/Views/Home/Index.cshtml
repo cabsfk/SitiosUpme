@@ -95,10 +95,10 @@
             </div><!--/item-->
             <div class="item">
                 <div class="row-fluid">
-                    <div class="col-sm-6 col-md-6" id="BaseESRITopo" value="Topographic">
+                    <div class="col-sm-6 col-md-6" id="BaseÜPME" value="UPME">
                         <a href="#" class="thumbnail">
-                            <img src="~/images/baselayers/topografic.PNG" style="max-width:100%;">
-                            <div class="carousel-caption"><center><h6>Topográfico</h6></center></div>
+                            <img src="~/images/baselayers/UPME.PNG" style="max-width:100%;">
+                            <div class="carousel-caption"><center><h6>UPME</h6></center></div>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-6" id="BaseOSM" value="OSM">
@@ -107,7 +107,6 @@
                             <div class="carousel-caption"><center><h6>OSM</h6></center></div>
                         </a>
                     </div>
-
                 </div><!--/row-fluid-->
             </div><!--/item-->
         </div><!--/carousel-inner-->
@@ -120,8 +119,11 @@
         </a>
     </div><!--/myCarousel-->
 </div>
-<div class='mouse-position'>
-    <b id='mousemove'><b />
+<div class='mouse-position panel'>
+    <div class="panel-body">
+        <h6> <b id='mousemove'><b /></h6>
+    </div>
 </div>
 @Scripts.Render("~/bundles/appMapGlobal")
 @Scripts.Render("~/bundles/appMap")
+@Scripts.Render("~/bundles/Nota")

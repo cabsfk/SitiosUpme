@@ -45,7 +45,7 @@ h6 {
   font-weight: 400;
 }
 a {
-  color: #4f7dd4;
+  color: #000006;
   -webkit-transition: 300ms;
   -moz-transition: 300ms;
   -o-transition: 300ms;
@@ -242,7 +242,7 @@ body > section {
 .midnight-blue h6,
 .concrete h6,
 .asbestos h6 {
-  color: #fff;
+  color: #2C3E50;
 }
 .turquoise small,
 .green-sea small,
@@ -266,7 +266,7 @@ body > section {
 .midnight-blue small,
 .concrete small,
 .asbestos small {
-  color: rgba(255, 255, 255, 0.8);
+  color: #2C3E50;
 }
 .turquoise {
   background-color: #1abc9c;
@@ -350,7 +350,8 @@ font:bold;
   background-color: #2c3e50;
 }
 .concrete {
-  background-color: #95a5a6;
+  background-color: #DAD5CE;
+  
 }
 .asbestos {
   background-color: #7f8c8d;
@@ -765,11 +766,15 @@ ul.tag-cloud li {
 }
 .navbar-inverse {
   border: none;
+  height: 50px;
+  -webkit-box-shadow: 0px 5px 3px 0px rgba(100,100,100,0.7);
+  -moz-box-shadow: 0px 5px 3px 0px rgba(100,100,100,0.7);
+  box-shadow: 0px 5px 3px 0px rgba(100,100,100,0.7);
 }
 .navbar-brand {
 float: left;
-height: 50px;
-padding: 0px 15px;
+height: 40px;
+padding: 3px 15px;
 font-size: 18px;
 line-height: 20px;
 }
@@ -780,13 +785,17 @@ line-height: 20px;
   color: #fff;
 }
 .navbar-inverse .navbar-nav {
-  margin-top: 10px;
+  margin-top: 2px;
 }
 .navbar-inverse .navbar-nav > li > a {
   padding-top: 5px;
   padding-bottom: 7px;
   border-radius: 4px;
-  color: #bdc3c7;
+
+}
+.navbar-right > li > h4 {
+  color: #103561;
+  font-weight: bolder;
 }
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
@@ -807,7 +816,7 @@ line-height: 20px;
 }
 .navbar-inverse .navbar-nav .dropdown-menu > li > a {
   padding: 8px 15px;
-  color: #bdc3c7;
+  color: rgba(255, 255, 255, 1);
 }
 .navbar-inverse .navbar-nav .dropdown-menu > li:hover > a,
 .navbar-inverse .navbar-nav .dropdown-menu > li:focus > a,
@@ -1147,4 +1156,17 @@ ul.faq li > div h3 {
   text-align: center;
   margin-top: 150px;
   margin-bottom: 150px;
+}
+
+.info {
+	padding: 6px 8px;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: white;
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+}
+.info h4 {
+	margin: 0 0 5px;
+	color: #777;
 }

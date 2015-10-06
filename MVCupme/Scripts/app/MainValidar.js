@@ -2,7 +2,9 @@
 /********************************************************
 Capas
 *******************************************************/
-var LyrCentrosPoblados = L.esri.featureLayer(dominio + urlHostSUEdit + 'FeatureServer/0');
+var LyrCentrosPoblados = L.esri.featureLayer({
+    url: dominio + urlHostSUEdit + 'FeatureServer/0'
+});
 
 var CentrosPobladoEliFind = L.esri.Tasks.find({
     url: dominio + urlHostSUCons + 'MapServer'
@@ -15,14 +17,22 @@ var CentrosPobladoFind = L.esri.Tasks.find({
     url: dominio + urlHostSUCons + 'MapServer'
 });
 
-var lyrCentrosPobladosVV = L.esri.featureLayer(dominio + urlHostSUEdit + 'FeatureServer/2');
+var lyrCentrosPobladosVV = L.esri.featureLayer({
+    url: dominio + urlHostSUEdit + 'FeatureServer/2'
+});
 var CentrosPobladoEditQueryTemp = L.esri.Tasks.query({
     url: dominio + urlHostSUEdit + 'FeatureServer/1'
 });;
 
-var lyrVVEdit = L.esri.featureLayer(dominio + urlHostSUEdit + 'FeatureServer/2');
-var lyrVVEdit_T = L.esri.featureLayer(dominio + urlHostSUEdit + 'FeatureServer/3');
-var lyrCentrosPobladosEdicion = L.esri.featureLayer(dominio + urlHostSUEdit + 'FeatureServer/1');
+var lyrVVEdit = L.esri.featureLayer({
+    url: dominio + urlHostSUEdit + 'FeatureServer/2'
+});
+var lyrVVEdit_T = L.esri.featureLayer({
+    url: dominio + urlHostSUEdit + 'FeatureServer/3'
+});
+var lyrCentrosPobladosEdicion = L.esri.featureLayer({
+    url: dominio + urlHostSUEdit + 'FeatureServer/1'
+});
 var lyrTotalCentrosPoblados;
 
 

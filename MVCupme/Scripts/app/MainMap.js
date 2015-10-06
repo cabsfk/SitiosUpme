@@ -9,25 +9,29 @@ var turfCPDane, turfCPDanemerge, turfCPCircles;
 /***************************************
 //Definicion de Busquedas
 ***************************************/
-var LyrCentrosPoblados = L.esri.featureLayer(dominio + urlHostSUEdit + 'FeatureServer/0');
-var LyrCentrosPoblados_T = L.esri.featureLayer(dominio + urlHostSUEdit + 'FeatureServer/1');
+var LyrCentrosPoblados = L.esri.featureLayer({
+    url: dominio + urlHostSUEdit + 'FeatureServer/0'
+});
+var LyrCentrosPoblados_T = L.esri.featureLayer({
+    url:dominio + urlHostSUEdit + 'FeatureServer/1'});
 
 var ServiceDaneFind = L.esri.Tasks.find({
-    url: dominio + urlHostDP + 'MapServer'
+    url: dominio + urlHostDP + 'MapServer/'
 });
 
 
 
 var CentrosPobladoEliFind = L.esri.Tasks.find({
-    url: dominio + urlHostSUCons + 'MapServer'
+    url: dominio + urlHostSUCons + 'MapServer/'
 });
 var CentrosPobladoActFind = L.esri.Tasks.find({
-    url: dominio + urlHostSUEdit + 'MapServer'
+    url: dominio + urlHostSUEdit + 'MapServer/'
 });
 var CentrosPobladoEditQuery = L.esri.Tasks.query({
     url: dominio + urlHostSUEdit + 'FeatureServer/1'
 });
-var lyrCentrosPobladosVV_t = L.esri.featureLayer(dominio + urlHostSUEdit + 'FeatureServer/3');
+var lyrCentrosPobladosVV_t = L.esri.featureLayer({
+    url:dominio + urlHostSUEdit + 'FeatureServer/3'});
 
 //*****************************************************************
 
@@ -86,7 +90,7 @@ function MapearCentroPoblado(Mpio, Dpto) {
         }).addTo(map);
     });
     var CentrosPobladoFind = L.esri.Tasks.find({
-        url: dominio + urlHostSUCons + 'MapServer'
+        url: dominio + urlHostSUCons + 'MapServer/'
     });
     CentrosPobladoFind.layers('0');
     CentrosPobladoFind.params.layerDefs = "0:COD_MPIO='" + Mpio+"'";
@@ -672,7 +676,7 @@ function LimpiarBorrado() {
 
 function ActualizarViviendas(ID_CENTRO_POBLADO) {
     var CentrosPobladoFind = L.esri.Tasks.find({
-        url: dominio + urlHostSUCons + 'MapServer'
+        url: dominio + urlHostSUCons + 'MapServer/'
     });
     CentrosPobladoFind.layers('0');
     CentrosPobladoFind.params.layerDefs = "";
@@ -1071,7 +1075,7 @@ function MapearCentroPobladoAct() {
             //console.log(value.properties.ID_CENTRO_POBLADO);
             totalfeatures = featureCollection.features.length;
             var CentrosPobladoFind = L.esri.Tasks.find({
-                url: dominio + urlHostSUCons + 'MapServer'
+                url: dominio + urlHostSUCons + 'MapServer/'
             });
             CentrosPobladoFind.layers('0');
             CentrosPobladoFind.params.layerDefs = "";

@@ -9,8 +9,12 @@ var turfCPDane, turfCPDanemerge, turfCPCircles;
 /***************************************
 //Definicion de Busquedas
 ***************************************/
-var LyrCentrosPoblados = L.esri.featureLayer(dominio + urlHostSUEdit + 'FeatureServer/0');
-var LyrCentrosPoblados_T = L.esri.featureLayer(dominio + urlHostSUEdit + 'FeatureServer/1');
+var LyrCentrosPoblados = L.esri.featureLayer({
+    url: dominio + urlHostSUEdit + 'FeatureServer/0'
+});
+var LyrCentrosPoblados_T = L.esri.featureLayer({
+    url: dominio + urlHostSUEdit + 'FeatureServer/1'
+});
 
 var ServiceDaneFind = L.esri.Tasks.find({
     url: dominio + urlHostDP + 'MapServer'
@@ -29,7 +33,9 @@ var CentrosPobladoActFind = L.esri.Tasks.find({
 var CentrosPobladoEditQuery = L.esri.Tasks.query({
     url: dominio + urlHostSUEdit + 'FeatureServer/1'
 });
-var lyrCentrosPobladosVV_t = L.esri.featureLayer(dominio + urlHostSUEdit + 'FeatureServer/3');
+var lyrCentrosPobladosVV_t = L.esri.featureLayer({
+    url: dominio + urlHostSUEdit + 'FeatureServer/3'
+});
 
 //*****************************************************************
 

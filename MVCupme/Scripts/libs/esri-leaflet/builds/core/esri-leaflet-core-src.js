@@ -1,4 +1,4 @@
-/*! esri-leaflet - v1.0.0-rc.5 - 2015-01-06
+/*! esri-leaflet - v1.0.0 - 2015-07-10
 *   Copyright (c) 2015 Environmental Systems Research Institute, Inc.
 *   Apache License*/
 (function (factory) {
@@ -17,7 +17,7 @@
   }
 }(function (L) {
 var EsriLeaflet = { //jshint ignore:line
-  VERSION: '1.0.0-rc.5',
+  VERSION: '1.0.0',
   Layers: {},
   Services: {},
   Controls: {},
@@ -422,9 +422,10 @@ if(typeof window !== 'undefined' && window.L){
     return featureCollection;
   };
 
-    // trim whitespace and add a tailing slash is needed to a url
+    // trim url whitespace and add a trailing slash if needed
   EsriLeaflet.Util.cleanUrl = function(url){
-    url = url.replace(/\s\s*/g, '');
+    //trim leading and trailing spaces, but not spaces inside the url
+    url = url.replace(/^\s+|\s+$|\A\s+|\s+\z/g, '');
 
     //add a trailing slash to the url if the user omitted it
     if(url[url.length-1] !== '/'){
@@ -435,7 +436,10 @@ if(typeof window !== 'undefined' && window.L){
   };
 
   EsriLeaflet.Util.isArcgisOnline = function(url){
-    return (/\.arcgis\.com/g).test(url);
+    /* hosted feature services can emit geojson natively.
+    our check for 'geojson' support will need to be revisted
+    once the functionality makes its way to ArcGIS Server*/
+    return (/\.arcgis\.com.*?FeatureServer/g).test(url);
   };
 
   EsriLeaflet.Util.geojsonTypeToArcGIS = function (geoJsonType) {
@@ -464,6 +468,12 @@ if(typeof window !== 'undefined' && window.L){
   };
 
   EsriLeaflet.Util.requestAnimationFrame = L.Util.bind(raf, window);
+
+  EsriLeaflet.Util.warn = function (message) {
+    if(console && console.warn) {
+      console.warn(message);
+    }
+  };
 
 })(EsriLeaflet);
 
@@ -509,6 +519,8 @@ if(typeof window !== 'undefined' && window.L){
     var httpRequest = new XMLHttpRequest();
 
     httpRequest.onerror = function(e) {
+      httpRequest.onreadystatechange = L.Util.falseFn;
+
       callback.call(context, {
         error: {
           code: 500,
@@ -528,7 +540,7 @@ if(typeof window !== 'undefined' && window.L){
           response = null;
           error = {
             code: 500,
-            message: 'Could not parse response as JSON.'
+            message: 'Could not parse response as JSON. This could also be caused by a CORS or XMLHttpRequest error.'
           };
         }
 
@@ -536,6 +548,8 @@ if(typeof window !== 'undefined' && window.L){
           error = response.error;
           response = null;
         }
+
+        httpRequest.onerror = L.Util.falseFn;
 
         callback.call(context, error, response);
       }
@@ -568,14 +582,13 @@ if(typeof window !== 'undefined' && window.L){
 
       // request is longer then 2000 characters and the browser does not support CORS, log a warning
       } else {
-        if(console && console.warn){
-          console.warn('a request to ' + url + ' was longer then 2000 characters and this browser cannot make a cross-domain post request. Please use a proxy http://esri.github.io/esri-leaflet/api-reference/request.html');
-          return;
-        }
+        EsriLeaflet.Util.warn('a request to ' + url + ' was longer then 2000 characters and this browser cannot make a cross-domain post request. Please use a proxy http://esri.github.io/esri-leaflet/api-reference/request.html');
+        return;
       }
 
       return httpRequest;
     },
+
     post: {
       XMLHTTP: function (url, params, callback, context) {
         var httpRequest = createRequest(callback, context);
@@ -790,44 +803,46 @@ EsriLeaflet.Services.Service = L.Class.extend({
   },
 
   _createServiceCallback: function(method, path, params, callback, context){
-    var request = [method, path, params, callback, context];
-
     return L.Util.bind(function(error, response){
 
       if (error && (error.code === 499 || error.code === 498)) {
         this._authenticating = true;
 
-        this._requestQueue.push(request);
+        this._requestQueue.push([method, path, params, callback, context]);
 
+        // fire an event for users to handle and re-authenticate
         this.fire('authenticationrequired', {
           authenticate: L.Util.bind(this.authenticate, this)
         });
-      } else {
-        callback.call(context, error, response);
 
-        if(error) {
-          this.fire('requesterror', {
-            url: this.options.url + path,
-            params: params,
-            message: error.message,
-            code: error.code,
-            method: method
-          });
-        } else {
-          this.fire('requestsuccess', {
-            url: this.options.url + path,
-            params: params,
-            response: response,
-            method: method
-          });
-        }
+        // if the user has access to a callback they can handle the auth error
+        error.authenticate = L.Util.bind(this.authenticate, this);
+      }
 
-        this.fire('requestend', {
+      callback.call(context, error, response);
+
+      if(error) {
+        this.fire('requesterror', {
           url: this.options.url + path,
           params: params,
+          message: error.message,
+          code: error.code,
+          method: method
+        });
+      } else {
+        this.fire('requestsuccess', {
+          url: this.options.url + path,
+          params: params,
+          response: response,
           method: method
         });
       }
+
+      this.fire('requestend', {
+        url: this.options.url + path,
+        params: params,
+        method: method
+      });
     }, this);
   },
 
@@ -845,6 +860,7 @@ EsriLeaflet.Services.Service = L.Class.extend({
 EsriLeaflet.Services.service = function(params){
   return new EsriLeaflet.Services.Service(params);
 };
+
 
   return EsriLeaflet;
 }));

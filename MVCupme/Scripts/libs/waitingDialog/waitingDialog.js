@@ -7,18 +7,13 @@
 var waitingDialog = waitingDialog || (function ($) {
     'use strict';
 
+    var pagina = document.URL.split("/");
+    var prefijoUrl = pagina[0] + '/' + pagina[1] + '/' + pagina[2] + '/' + pagina[3];
     // Creating modal dialog's DOM
     var $dialog = $(
-		'<div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" style="padding-top:15%; overflow-y:visible;">' +
-		'<div class="modal-dialog modal-m">' +
-		'<div class="modal-content">' +
-			'<div class="modal-header"><h3 style="margin:0;"></h3></div>' +
-			'<div class="modal-body">' +
-                '<img class="displayed" src="/SitiosUpme/images/loading.gif"" width="300" height="180"><br><hr>' +
-                
-				'<div class="progress progress-striped active" style="margin-bottom:0;"><div class="progress-bar" style="width: 100%"></div></div>' +
-			'</div>' +
-		'</div></div></div>');
+		'<div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" style="padding-top:30%; overflow-y:visible;">' +
+		        '<img class="displayed" src="' + prefijoUrl + '/images/loading.gif"" width="200" height="120">' +
+                '</div>');
 
     return {
         /**
