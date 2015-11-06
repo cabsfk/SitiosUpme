@@ -229,7 +229,7 @@ query_tipo.where("1=1").returnGeometry(false).run(function (error, featureCollec
     });
 });
 
-for (i = moment().format('YYYY') ; i >= 1990 ; i--) {
+for (i = moment().format('YYYY') ; i >= moment().format('YYYY')-1 ; i--) {
     $("#SecVigenciaAnio").append('<option value="' + i + '">' + i + '</option>');
     $("#EditSecVigenciaAnio").append('<option value="' + i + '">' + i + '</option>');
 }

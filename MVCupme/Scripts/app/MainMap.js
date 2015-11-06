@@ -73,11 +73,14 @@ var selAlfMun = function (json,Mpio,Dpto) {
 
 
 function MapearCentroPoblado(Mpio, Dpto) {
-    ServiceDaneFind.layers('2');
-    ServiceDaneFind.params.layerDefs = "2:MPIO_CCDGO='" + Mpio + "'";
-    ServiceDaneFind.text(Dpto).fields('DPTO_CCDGO');
+    var ServiceDaneFindMapear = L.esri.Tasks.find({
+        url: dominio + urlHostDP + 'MapServer/'
+    });
+    ServiceDaneFindMapear.layers('2');
+    ServiceDaneFindMapear.params.layerDefs = "2:MPIO_CCDGO='" + Mpio + "'";
+    ServiceDaneFindMapear.text(Dpto).fields('DPTO_CCDGO');
 
-    ServiceDaneFind.run(function (error, featureCollection, response2) {
+    ServiceDaneFindMapear.run(function (error, featureCollection, response2) {
         if (map.hasLayer(lyrAreaCentroPoblado)) {
             map.removeLayer(lyrAreaCentroPoblado);
         }
@@ -221,10 +224,15 @@ function MapearCentroPoblado(Mpio, Dpto) {
 $("#cityVV").autocomplete({
     source: function (request, response) {
         $("#BtnBusquedaMunVV").empty().append("<span class='glyphicon glyphicon-repeat'></span>").removeClass("btn-default").addClass("btn-warning");
-        ServiceDaneFind.layers('0').text(request.term).fields('MPIO_CNMBRSA,MPIO_CNMBR');
+        var ServiceDaneFindVV = L.esri.Tasks.find({
+            url: dominio + urlHostDP + 'MapServer/'
+        });
+
+
+        ServiceDaneFindVV.layers('0').text(request.term).fields('MPIO_CNMBRSA,MPIO_CNMBR');
        // ServiceDaneFind.params.layerDefs ="1:CLASE='3'";
         
-        ServiceDaneFind.run(function (error, featureCollection, response2) {
+        ServiceDaneFindVV.run(function (error, featureCollection, response2) {
             console.log(featureCollection);
             $("#BtnBusquedaMunVV").empty().append("<span class='glyphicon glyphicon-search'></span>").removeClass("btn-warning").addClass("btn-default");
             response($.map(featureCollection.features, function (el) {
@@ -244,8 +252,17 @@ $("#cityVV").autocomplete({
         if (map.hasLayer(LyrMunicipio)) {
             map.removeLayer(LyrMunicipio);
         }
-        selAlfMun(ui.item.geojson, ui.item.MPIO, ui.item.DPTO);
-        MapearCentroPoblado(ui.item.MPIO, ui.item.DPTO);
+        var querycity = L.esri.Tasks.query({
+            url: dominio + urlHostDP + 'MapServer/0'
+        });
+
+        querycity.where('DPTO_CCDGO=' + ui.item.DPTO + ' and MPIO_CCDGO=' + ui.item.MPIO);
+        waitingDialog.show();
+        querycity.run(function (error, featureCollection, response) {
+            waitingDialog.hide();
+            selAlfMun(featureCollection.features[0], ui.item.MPIO, ui.item.DPTO);
+            MapearCentroPoblado(ui.item.MPIO, ui.item.DPTO);
+        });
     },
     open: function () {
         $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
@@ -270,10 +287,14 @@ $("#city").focus();
 $("#city").autocomplete({
     source: function (request, response) {
         $("#BtnBusquedaMun").empty().append("<span class='glyphicon glyphicon-repeat'></span>").removeClass("btn-default").addClass("btn-warning");
-        ServiceDaneFind.layers('0').text(request.term).fields('MPIO_CNMBRSA,MPIO_CNMBR');
+        var ServiceDaneFindCity = L.esri.Tasks.find({
+            url: dominio + urlHostDP + 'MapServer/'
+        });
+        ServiceDaneFindCity.returnGeometry(false).layers('0').text(request.term).fields('MPIO_CNMBRSA,MPIO_CNMBR');
         // ServiceDaneFind.params.layerDefs ="1:CLASE='3'";
 
-        ServiceDaneFind.run(function (error, featureCollection, response2) {
+        ServiceDaneFindCity.run(function (error, featureCollection, response2) {
+            console.log("respuesta");
             console.log(featureCollection);
             $("#BtnBusquedaMun").empty().append("<span class='glyphicon glyphicon-search'></span>").removeClass("btn-warning").addClass("btn-default");
             response($.map(featureCollection.features, function (el) {
@@ -293,8 +314,18 @@ $("#city").autocomplete({
         if (map.hasLayer(LyrMunicipio)) {
             map.removeLayer(LyrMunicipio);
         }
-        selAlfMun(ui.item.geojson, ui.item.MPIO, ui.item.DPTO);
-        MapearCentroPoblado(ui.item.MPIO, ui.item.DPTO);
+        var querycity = L.esri.Tasks.query({
+            url: dominio + urlHostDP + 'MapServer/0'
+        });
+
+        querycity.where('DPTO_CCDGO=' + ui.item.DPTO + ' and MPIO_CCDGO=' + ui.item.MPIO);
+        waitingDialog.show();
+        querycity.run(function (error, featureCollection, response) {
+            waitingDialog.hide();
+            selAlfMun(featureCollection.features[0], ui.item.MPIO, ui.item.DPTO);
+            MapearCentroPoblado(ui.item.MPIO, ui.item.DPTO);
+        });
+        
     },
     open: function () {
         $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
@@ -785,7 +816,7 @@ function ActualizarViviendas(ID_CENTRO_POBLADO) {
                 $("#ActSectClase").change(function () {
                     ClaseZona($(this).val(), "Act");
                 });
-                for (i = moment().format('YYYY') ; i >= 1990 ; i--) {
+                for (i = moment().format('YYYY') ; i >= moment().format('YYYY')-1 ; i--) {
                     $("#ActSecVigenciaAnio").append('<option value="' + i + '">' + i + '</option>');
                 }
                 $("#ActSecVigenciaMes").prop('disabled', 'disabled');

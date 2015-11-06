@@ -229,8 +229,17 @@ $("#cityVV").autocomplete({
         if (map.hasLayer(LyrMunicipio)) {
             map.removeLayer(LyrMunicipio);
         }
-        selAlfMun(ui.item.geojson, ui.item.MPIO, ui.item.DPTO);
-        MapearCentroPoblado(ui.item.MPIO, ui.item.DPTO);
+        var querycity = L.esri.Tasks.query({
+            url: dominio + urlHostDP + 'MapServer/0'
+        });
+
+        querycity.where('DPTO_CCDGO=' + ui.item.DPTO + ' and MPIO_CCDGO=' + ui.item.MPIO);
+        waitingDialog.show();
+        querycity.run(function (error, featureCollection, response) {
+            waitingDialog.hide();
+            selAlfMun(featureCollection.features[0], ui.item.MPIO, ui.item.DPTO);
+            MapearCentroPoblado(ui.item.MPIO, ui.item.DPTO);
+        });
     },
     open: function () {
         $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
@@ -273,8 +282,17 @@ $("#city").autocomplete({
         if (map.hasLayer(LyrMunicipio)) {
             map.removeLayer(LyrMunicipio);
         }
-        selAlfMun(ui.item.geojson, ui.item.MPIO, ui.item.DPTO);
-        MapearCentroPoblado(ui.item.MPIO, ui.item.DPTO);
+        var querycity = L.esri.Tasks.query({
+            url: dominio + urlHostDP + 'MapServer/0'
+        });
+
+        querycity.where('DPTO_CCDGO=' + ui.item.DPTO + ' and MPIO_CCDGO=' + ui.item.MPIO);
+        waitingDialog.show();
+        querycity.run(function (error, featureCollection, response) {
+            waitingDialog.hide();
+            selAlfMun(featureCollection.features[0], ui.item.MPIO, ui.item.DPTO);
+            MapearCentroPoblado(ui.item.MPIO, ui.item.DPTO);
+        });
     },
     open: function () {
         $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
@@ -776,7 +794,7 @@ function ActualizarViviendas(ID_CENTRO_POBLADO) {
                 $("#ActSecTipoZona").change(function () {
                     TipoZona($(this).val(), "Act");
                 });
-                for (i = moment().format('YYYY') ; i >= 1990 ; i--) {
+                for (i = moment().format('YYYY') ; i >= moment().format('YYYY')-1 ; i--) {
                     $("#ActSecVigenciaAnio").append('<option value="' + i + '">' + i + '</option>');
                 }
 
