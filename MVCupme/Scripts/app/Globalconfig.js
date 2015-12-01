@@ -1,10 +1,9 @@
-﻿
-var dominio = "http://arcgis.simec.gov.co:6080"; //Dominio del arcgis server  http://localhost:6080
+﻿var dominio = "http://arcgis.simec.gov.co:6080"; //Dominio del arcgis server  http://localhost:6080
 var urlUPMEbase = '/arcgis/rest/services/UPME_BC/UPME_BC_Base_Cartografica/';
 var urlHostSUEdit = "/arcgis/rest/services/UPME_BC/UPME_BC_Sitios_UPME_Edicion/";
 var urlHostSUCons = "/arcgis/rest/services/UPME_BC/UPME_BC_Sitios_UPME_Vistas/";
 var urlHostDP = "/arcgis/rest/services/UPME_BC/UPME_BC_Sitios_UPME_Division_Politica/";
-var notaAclaratoria='De conformidad con el Decreto 1122 de 2008, la UPME se permite disponer esta herramienta para la recolección de la información correspondiente a la ubicación geográfica de los SITIOS así como las viviendas totales y viviendas que no cuentan con el servicio de energía eléctrica, tanto urbano como rural.Esta herramienta es una ayuda para que las Entidades Territoriales reporten información, produciéndose una capa propia de la UPME quien validará con otras fuentes la ubicación espacial de las localidades, para conseguir mayor calidad en la información para el Planeamiento de la Expansión de Cobertura de Energía Eléctrica.'
+var notaAclaratoria = 'De conformidad con el Decreto 1122 de 2008, la UPME se permite disponer esta herramienta para la recolección de la información correspondiente a la ubicación geográfica de los SITIOS así como las viviendas totales y viviendas que no cuentan con el servicio de energía eléctrica, tanto urbano como rural.Esta herramienta es una ayuda para que las Entidades Territoriales reporten información, produciéndose una capa propia de la UPME quien validará con otras fuentes la ubicación espacial de las localidades, para conseguir mayor calidad en la información para el Planeamiento de la Expansión de Cobertura de Energía Eléctrica.'
 
 var buffetCP = 300;
 var ordenarGeojson; //global de orden de capa de centrso poblados
@@ -15,11 +14,11 @@ var UsrOrgJson = "";
 
 if (idUsuario != "") {
 
-    $.getJSON("../../MVCupme/Home/UsrOrgJson?idusuario=" + idUsuario, function (data) {
+    $.getJSON("../../SitiosUpme/Home/UsrOrgJson?idusuario=" + idUsuario, function (data) {
         UsrOrgJson = data;
         $("#tituloOrganizacion").empty().append(UsrOrgJson[0].organizacion);
-      /*  console.log("UsrOrgJson");
-        console.log(UsrOrgJson);*/
+        /*  console.log("UsrOrgJson");
+          console.log(UsrOrgJson);*/
     })
 }
 
@@ -61,7 +60,7 @@ var prefijo = pagina[0] + '/' + pagina[1] + '/' + pagina[2] + '/' + pagina[3] + 
 waitingDialog.show();
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend');
-    if (pagina.length > 5) {   
+    if (pagina.length > 5) {
         div.innerHTML += '<i ><img src="' + prefijo + 'images/leyend/creacionpunto.png"  height="20px"></i>Sitio UPME en creación<br>';
         div.innerHTML += '<i ><img src="' + prefijo + 'images/leyend/SinAprobar.png" height="20px"></i> Sitio Upme Sin Aprobar<br>';
     }
@@ -96,14 +95,14 @@ var OpenMapSurfer_Roads = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/{ty
     attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     subdomains: '1234'
 });
-var UPME_Base = L.tileLayer(dominio+urlUPMEbase+"MapServer/tile/{z}/{y}/{x}", {
+var UPME_Base = L.tileLayer(dominio + urlUPMEbase + "MapServer/tile/{z}/{y}/{x}", {
     type: 'map',
     hideLogo: false,
     logoPosition: 'bottomright',
     minZoom: 5,
     maxZoom: 19,
     subdomains: ['server', 'services'],
-    attribution: 'UPME BASE LAYER'    
+    attribution: 'UPME BASE LAYER'
 });
 
 var LyrBase = L.esri.basemapLayer('Imagery').addTo(map);
@@ -166,7 +165,7 @@ $(function () {
     } (i);
 });
 var MapLayerLimitesDane = L.esri.dynamicMapLayer({
-    url:dominio + urlHostDP + 'MapServer/',
+    url: dominio + urlHostDP + 'MapServer/',
     layers: [2, 3]
 }).addTo(map);
 
@@ -201,7 +200,7 @@ var query_fuentes = L.esri.Tasks.query({
 query_fuentes.where("1=1").returnGeometry(false).run(function (error, featureCollection) {
     $.each(featureCollection.features, function (index, value) {
         arrayFuentes[value.properties.ID_FUENTE_CS] = value.properties.NOM_FUENTE_CS;
-    });    
+    });
 });
 
 
@@ -214,14 +213,14 @@ function ActClaseVentEmer() {
 }
 
 var query_tipo = L.esri.Tasks.query({
-    
+
     url: dominio + urlHostSUCons + 'MapServer/4'
 });
 
 query_tipo.where("1=1").returnGeometry(false).run(function (error, featureCollection) {
     $.each(featureCollection.features, function (index, value) {
         arraytipos[value.properties.ID_TIPO_CP] = value.properties.NOM_TIPO_CP;
-       // console.log(value.properties.ID_TIPO_CP + '">' + value.properties.NOM_TIPO_CP);
+        // console.log(value.properties.ID_TIPO_CP + '">' + value.properties.NOM_TIPO_CP);
         if (value.properties.ID_TIPO_CP != 1) {
             $("#SectTipo").append('<option value="' + value.properties.ID_TIPO_CP + '">' + value.properties.NOM_TIPO_CP + '</option>');
             $("#EditSectTipo").append('<option value="' + value.properties.ID_TIPO_CP + '">' + value.properties.NOM_TIPO_CP + '</option>');
@@ -229,7 +228,7 @@ query_tipo.where("1=1").returnGeometry(false).run(function (error, featureCollec
     });
 });
 
-for (i = moment().format('YYYY') ; i >= moment().format('YYYY')-1 ; i--) {
+for (i = moment().format('YYYY') ; i >= moment().format('YYYY') - 1 ; i--) {
     $("#SecVigenciaAnio").append('<option value="' + i + '">' + i + '</option>');
     $("#EditSecVigenciaAnio").append('<option value="' + i + '">' + i + '</option>');
 }
@@ -258,7 +257,7 @@ function clickmap(id, lyrname) {
             }
         });
     } else if (lyrname == "lyrTotalCentrosPoblados") {
-     //   console.log(id);
+        //   console.log(id);
         lyrTotalCentrosPoblados.eachLayer(function (marker) {
             if (marker.feature.properties.ID_CENTRO_POBLADO == id) {
 
@@ -344,8 +343,8 @@ $("#SecVigenciaAnio,#EditSecVigenciaAnio").change(function () {
     var currentId = $(this).attr('id');
     var tipo = currentId.substr(0, 4);
     var prevalue = tipo == "SecV" ? "" : tipo == "Edit" ? tipo.substr(0, 4) : tipo;
-   /* console.log('prevalue');
-    console.log(prevalue);*/
+    /* console.log('prevalue');
+     console.log(prevalue);*/
     var SelctAnio = $("#" + prevalue + "SecVigenciaAnio").val();
     if (SelctAnio == "") {
         $('#' + prevalue + 'SecVigenciaMes').val("");
@@ -370,10 +369,10 @@ $("#SecVigenciaAnio,#EditSecVigenciaAnio").change(function () {
 $("#SecVigenciaMes").prop('disabled', 'disabled');
 
 function getDataUser(idusuario) {
-  //  console.log(idusuario);
+    //  console.log(idusuario);
     var datauserjson = '';
     $.ajax({
-        url: "../../MVCupme/Home/UsrOrgJson?idusuario=" + idusuario,
+        url: "../../SitiosUpme/Home/UsrOrgJson?idusuario=" + idusuario,
         dataType: 'json',
         async: false,
         success: function (json) {

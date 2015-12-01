@@ -224,15 +224,13 @@ function MapearCentroPoblado(Mpio, Dpto) {
 $("#cityVV").autocomplete({
     source: function (request, response) {
         $("#BtnBusquedaMunVV").empty().append("<span class='glyphicon glyphicon-repeat'></span>").removeClass("btn-default").addClass("btn-warning");
-        var ServiceDaneFindVV = L.esri.Tasks.find({
+        var ServiceDaneFindCity = L.esri.Tasks.find({
             url: dominio + urlHostDP + 'MapServer/'
         });
+        ServiceDaneFindCity.returnGeometry(false).layers('0').text(request.term).fields('MPIO_CNMBRSA,MPIO_CNMBR');
+        // ServiceDaneFind.params.layerDefs ="1:CLASE='3'";
 
-
-        ServiceDaneFindVV.layers('0').text(request.term).fields('MPIO_CNMBRSA,MPIO_CNMBR');
-       // ServiceDaneFind.params.layerDefs ="1:CLASE='3'";
-        
-        ServiceDaneFindVV.run(function (error, featureCollection, response2) {
+        ServiceDaneFindCity.run(function (error, featureCollection, response2) {
             console.log(featureCollection);
             $("#BtnBusquedaMunVV").empty().append("<span class='glyphicon glyphicon-search'></span>").removeClass("btn-warning").addClass("btn-default");
             response($.map(featureCollection.features, function (el) {

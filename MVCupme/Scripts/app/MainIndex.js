@@ -206,10 +206,13 @@ function MapearCentroPoblado(Mpio, Dpto) {
 $("#cityVV").autocomplete({
     source: function (request, response) {
         $("#BtnBusquedaMunVV").empty().append("<span class='glyphicon glyphicon-repeat'></span>").removeClass("btn-default").addClass("btn-warning");
-        ServiceDaneFind.layers('0').text(request.term).fields('MPIO_CNMBRSA,MPIO_CNMBR');
-       // ServiceDaneFind.params.layerDefs ="1:CLASE='3'";
-        
-        ServiceDaneFind.run(function (error, featureCollection, response2) {
+        var ServiceDaneFindCity = L.esri.Tasks.find({
+            url: dominio + urlHostDP + 'MapServer/'
+        });
+        ServiceDaneFindCity.returnGeometry(false).layers('0').text(request.term).fields('MPIO_CNMBRSA,MPIO_CNMBR');
+        // ServiceDaneFind.params.layerDefs ="1:CLASE='3'";
+
+        ServiceDaneFindCity.run(function (error, featureCollection, response2) {
             console.log(featureCollection);
             $("#BtnBusquedaMunVV").empty().append("<span class='glyphicon glyphicon-search'></span>").removeClass("btn-warning").addClass("btn-default");
             response($.map(featureCollection.features, function (el) {
@@ -259,10 +262,13 @@ $("#cityVV").autocomplete({
 $("#city").autocomplete({
     source: function (request, response) {
         $("#BtnBusquedaMun").empty().append("<span class='glyphicon glyphicon-repeat'></span>").removeClass("btn-default").addClass("btn-warning");
-        ServiceDaneFind.layers('0').text(request.term).fields('MPIO_CNMBRSA,MPIO_CNMBR');
+        var ServiceDaneFindCity = L.esri.Tasks.find({
+            url: dominio + urlHostDP + 'MapServer/'
+        });
+        ServiceDaneFindCity.returnGeometry(false).layers('0').text(request.term).fields('MPIO_CNMBRSA,MPIO_CNMBR');
         // ServiceDaneFind.params.layerDefs ="1:CLASE='3'";
 
-        ServiceDaneFind.run(function (error, featureCollection, response2) {
+        ServiceDaneFindCity.run(function (error, featureCollection, response2) {
             console.log(featureCollection);
             $("#BtnBusquedaMun").empty().append("<span class='glyphicon glyphicon-search'></span>").removeClass("btn-warning").addClass("btn-default");
             response($.map(featureCollection.features, function (el) {
@@ -285,7 +291,7 @@ $("#city").autocomplete({
         var querycity = L.esri.Tasks.query({
             url: dominio + urlHostDP + 'MapServer/0'
         });
-
+        limpiarRadios();
         querycity.where('DPTO_CCDGO=' + ui.item.DPTO + ' and MPIO_CCDGO=' + ui.item.MPIO);
         waitingDialog.show();
         querycity.run(function (error, featureCollection, response) {

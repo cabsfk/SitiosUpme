@@ -221,33 +221,36 @@ function MapearCentroPobladoAct() {
                 var vigencia = value.properties.VIGENCIA.toString();
                 var datauser = "";
                 datauser = getDataUser(value.properties.ID_USUARIO_REGISTRO);
-
-                $("#ListaCpAct .chat").prepend(
-                        '<li class="left" onclick="clickmap(' + value.properties.ID_CENTRO_POBLADO + ',\'lyrTotalCentrosPoblados\')">' +
-                                   '<div class="clearfix">' +
-                                       '<h5>' +
-                                           '<strong class="primary-font">' + featureCollectionTemp.features[0].properties.NOMBRE_SITIO + '</strong>,<br> '
-                                           + featureCollectionTemp.features[0].properties.MPIO_CNMBR + ', ' + featureCollectionTemp.features[0].properties.DPTO_CNMBR + '.<br>' +
-                                           '<small>Vigencia: </b>' + vigencia.substring(4, 6) + '-' + vigencia.substring(0, 4) + '</b><br />' +
-                                           'Usuario: <b>' + datauser[0].nombre + '</b><br />' +
-                                           'Organizacion: <b>' + datauser[0].organizacion +
-                                           '</b><br>Total: <b>' + value.properties.V_TOTAL +
-                                           '</b> ( Urbanas: <b>' + value.properties.V_URBANO +
-                                           '</b> - Rurales: <b>' + value.properties.V_RURAL +
-                                           '</b>)<br>Sin servicio: <b>' + value.properties.VSS_TOTAL +
-                                           '</b> (urbanas: <b>' + value.properties.VSS_URBANO +
-                                           '</b> - rurales: <b>' + value.properties.VSS_RURAL +
-                                           '</b>)<br>Observación: <b>' + value.properties.OBSERVACION + '</b><br><small>' +
-                                           '<button class="btn btn-success pull-left btn-xs " data-toggle="tooltip" data-placement="right" title="Aprobar" type="button" onclick="AprobarActualizacion(' + value.properties.OBJECTID + ')">' +
-                                                '<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> ' +
-                                            '</button> ' +
-                                            '<button class="btn btn-danger pull-right btn-xs " data-toggle="tooltip" data-placement="left" title="Rechazar" type="button" onclick="RechazarActualizacion(' + value.properties.OBJECTID + ')">' +
-                                                '<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> ' +
-                                            '</button></h5><br>' +
-                                             '</h5>' +
-                                    '</div>' +
-                              '</li>'
-                       );
+                if (datauser.length != 0) {
+                    $("#ListaCpAct .chat").prepend(
+                            '<li class="left" onclick="clickmap(' + value.properties.ID_CENTRO_POBLADO + ',\'lyrTotalCentrosPoblados\')">' +
+                                       '<div class="clearfix">' +
+                                           '<h5>' +
+                                               '<strong class="primary-font">' + featureCollectionTemp.features[0].properties.NOMBRE_SITIO + '</strong>,<br> '
+                                               + featureCollectionTemp.features[0].properties.MPIO_CNMBR + ', ' + featureCollectionTemp.features[0].properties.DPTO_CNMBR + '.<br>' +
+                                               '<small>Vigencia: </b>' + vigencia.substring(4, 6) + '-' + vigencia.substring(0, 4) + '</b><br />' +
+                                               'Usuario: <b>' + datauser[0].nombre + '</b><br />' +
+                                                '<small>email: ' + datauser[0].email + '</small><br />' +
+                                                '<small>telefono: ' + datauser[0].telefono + '-Ext:' + datauser[0].ext + '</small><br />' +
+                                                '<small>celular: ' + datauser[0].celular + '</small>' +
+                                               '</b><br>Total: <b>' + value.properties.V_TOTAL +
+                                               '</b> ( Urbanas: <b>' + value.properties.V_URBANO +
+                                               '</b> - Rurales: <b>' + value.properties.V_RURAL +
+                                               '</b>)<br>Sin servicio: <b>' + value.properties.VSS_TOTAL +
+                                               '</b> (urbanas: <b>' + value.properties.VSS_URBANO +
+                                               '</b> - rurales: <b>' + value.properties.VSS_RURAL +
+                                               '</b>)<br>Observación: <b>' + value.properties.OBSERVACION + '</b><br><small>' +
+                                               '<button class="btn btn-success pull-left btn-xs " data-toggle="tooltip" data-placement="right" title="Aprobar" type="button" onclick="AprobarActualizacion(' + value.properties.OBJECTID + ')">' +
+                                                    '<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> ' +
+                                                '</button> ' +
+                                                '<button class="btn btn-danger pull-right btn-xs " data-toggle="tooltip" data-placement="left" title="Rechazar" type="button" onclick="RechazarActualizacion(' + value.properties.OBJECTID + ')">' +
+                                                    '<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> ' +
+                                                '</button></h5><br>' +
+                                                 '</h5>' +
+                                        '</div>' +
+                                  '</li>'
+                           );
+                }
                 contador++;
                 if (totalfeatures == contador) {
                     $('#ListaCpAct').searchable({
@@ -539,10 +542,10 @@ function MapearCentroPobladoEli() {
                 CP.bindPopup(htmlpopup);
                 var datauser = "";
                 datauser = getDataUser(feature.properties.ID_USUARIO_CREACION);
-                
-                $("#ListaCpValidate .chat").prepend(
+                if (datauser.length != 0) {
+                    $("#ListaCpValidate .chat").prepend(
                      '<li class="left" onclick="clickmap(' + feature.properties.OBJECTID + ',\'lyrCentrosPobladosT\')">' +
-                                '<div class="clearfix">'+
+                                '<div class="clearfix">' +
                                     '<h5>' +
                                         '<strong class="primary-font">' + feature.properties.NOMBRE_SITIO + '</strong>,<br> ' +
                                         feature.properties.MPIO_CNMBR + ', ' + feature.properties.DPTO_CNMBR + '.<br>' +
@@ -550,16 +553,23 @@ function MapearCentroPobladoEli() {
                                         '<span class="fa fa-calendar-o"></span> <small>Vigencia: ' + vigencia.substring(4, 6) + '-' + vigencia.substring(0, 4) + '</small><br />' +
                                         '<span class="glyphicon glyphicon-user"></span> <small>Usuario: ' + datauser[0].nombre + '</small><br />' +
                                         '<span class="glyphicon glyphicon-inbox"></span> <small>Organizacion: ' + datauser[0].organizacion + '</small><br />' +
-                                    '</h5>'+
-                                    '<div>'+
-                                        '<small class="pull-right text-muted">'+
-                                            '<span class="glyphicon glyphicon-time"></span> '+feature.properties.FECHA_CREACION+
-                                        '</small>'+
-                                    '</div>'+
-                                '</div>'+
+                                         '<small>email: ' + datauser[0].email + '</small><br />' +
+                                        '<small>telefono:  ' + datauser[0].telefono + '-Ext:' + datauser[0].ext + '</small><br />' +
+                                        '<small>celular: ' + datauser[0].celular + '</small><br />' +
+                                    '</h5>' +
+                                    '<div>' +
+                                        '<small class="pull-right text-muted">' +
+                                            '<span class="glyphicon glyphicon-time"></span> ' + feature.properties.FECHA_CREACION +
+                                        '</small>' +
+                                    '</div>' +
+                                '</div>' +
                             '</li>'
                     );
+                    
+                }
                 return CP;
+                
+               
             }
         });
 

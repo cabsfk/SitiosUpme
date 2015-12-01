@@ -43,6 +43,11 @@ namespace MVCupme.Controllers
             {
                 idusuario = c.ID_USUARIO,
                 nombre = c.NOMBRE,
+                email = c.EMAIL,
+                cargo = c.CARGO,
+                telefono = c.TELEFONO,
+                ext = c.EXTENSION,
+                celular = c.CELULAR,
                 idorganizacion = c.ID_ORGANIZACION,
                 organizacion = c.MUB_ORGANIZACIONES.RAZON_SOCIAL
             });
