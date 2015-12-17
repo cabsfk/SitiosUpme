@@ -416,7 +416,9 @@ function EditCentroPoblado(EditUbiCP) {
                 if (result) {
                     LyrCentrosPoblados_T.updateFeature(EditUbiCP.features[0], function (error, featureCollection, response2) {
                         //console.log(featureCollection);
+                        waitingDialog.hide();
                         if (featureCollection.success == true) {
+                            
                             MapearCentroPobladoEli();
                             msj_exito("Se EDITO el Sitio UPME a Energizar exitosamente!");
                             $("#panel_edicion").hide(100);
@@ -442,6 +444,7 @@ function EditCentroPoblado(EditUbiCP) {
             action: function (dialog) {
                 typeof dialog.getData('callback') === 'function' && dialog.getData('callback')(true);
                 dialog.close();
+                waitingDialog.show();
             }
         }]
     });
@@ -455,13 +458,16 @@ function CrearCentroPoblado(UbiCP) {
         data: {
             'callback': function (result) {
                 if (result) {
+                    
                     LyrCentrosPoblados_T.addFeature(UbiCP, function (error, featureCollection, response2) {
-                        //console.log(featureCollection);
+                        
                         if (featureCollection.success == true) {
+                            waitingDialog.hide();
                             msj_exito("Se CREO el Sitio UPME a Energizar exitosamente!");
                             $("#FormCPPgn4").addClass("hide");
                             $("#FormCPPgn5").removeClass("hide");
                             limpiarRadios();
+
                             return true;
                         } else {
                             msj_peligro("NO SE REALIZO LA CREACION CON EXITO, REVISE EL SERVIDOR DE MAPAS !");
@@ -484,6 +490,7 @@ function CrearCentroPoblado(UbiCP) {
             action: function (dialog) {
                 typeof dialog.getData('callback') === 'function' && dialog.getData('callback')(true);
                 dialog.close();
+                waitingDialog.show();
             }
         }]
     });
@@ -655,7 +662,7 @@ function BorrarCentroPoblado(id) {
             'callback': function (result) {
                             if (result) {
                                 LyrCentrosPoblados_T.deleteFeature(id, function (error, featureCollection, response2) {
-                                    //console.log(featureCollection);
+                                    waitingDialog.hide();
                                     if (featureCollection.success == true) {
                                         MapearCentroPobladoEli();
                                         msj_exito("Se ELIMINO el Sitio UPME a Energizar exitosamente!");
@@ -681,6 +688,7 @@ function BorrarCentroPoblado(id) {
             action: function (dialog) {
                 typeof dialog.getData('callback') === 'function' && dialog.getData('callback')(true);
                 dialog.close();
+                waitingDialog.show();
             }
         }]
     });
@@ -883,9 +891,10 @@ function ActualizarViviendas(ID_CENTRO_POBLADO) {
                         JSONVV.type = new Object();
                         JSONVV.type = "Feature";
                         console.log(JSONVV);
-
+                        waitingDialog.show();
                         lyrCentrosPobladosVV_t.addFeature(JSONVV, function (error, featureCollectionVV) {
                             //console.log()
+                            waitingDialog.hide();
                             if (featureCollectionVV.success == true) {
                                 /*MapearCentroPobladoEli();
                                 MapearCentroPobladoTotal();*/
@@ -1059,6 +1068,7 @@ function BorrarActualizacion(id) {
             'callback': function (result) {
                 if (result) {
                     lyrCentrosPobladosVV_t.deleteFeature(id, function (error, featureCollection, response2) {
+                        waitingDialog.hide();
                         //console.log(featureCollection);
                         if (featureCollection.success == true) {
                             MapearCentroPobladoAct();
@@ -1085,6 +1095,7 @@ function BorrarActualizacion(id) {
             action: function (dialog) {
                 typeof dialog.getData('callback') === 'function' && dialog.getData('callback')(true);
                 dialog.close();
+                waitingDialog.show();
             }
         }]
     });

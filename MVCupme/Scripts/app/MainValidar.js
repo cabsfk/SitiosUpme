@@ -102,6 +102,7 @@ function AprobarActualizacion(id) {
                                 query_actualizaciones.where(whereVV).returnGeometry(false)
                                     .run(function (error, featureCollection) {
                                         console.log(featureCollection);
+                                        waitingDialog.hide();
                                         if (featureCollection.features.length == 0) {
                                             adiccionVV(featureCollectionVV);
                                         } else {
@@ -140,6 +141,7 @@ function AprobarActualizacion(id) {
             action: function (dialog) {
                 typeof dialog.getData('callback') === 'function' && dialog.getData('callback')(true);
                 dialog.close();
+                waitingDialog.show();
             }
         }]
     });
@@ -157,6 +159,7 @@ function RechazarActualizacion(id) {
                     query_actualizaciones_t.featureIds(id).where("").run(function (error, featureCollectionVV, response2) {
                         featureCollectionVV.features[0].properties.ESTADO = 2;
                         lyrVVEdit_T.updateFeature(featureCollectionVV.features[0], function (error, featureCollection, response2) {
+                            waitingDialog.hide();
                             //console.log(featureCollection);
                             if (featureCollection.success == true) {
                                 MapearCentroPobladoAct()
@@ -185,6 +188,7 @@ function RechazarActualizacion(id) {
             action: function (dialog) {
                 typeof dialog.getData('callback') === 'function' && dialog.getData('callback')(true);
                 dialog.close();
+                waitingDialog.show();
             }
         }]
     });
@@ -405,6 +409,7 @@ function EditCentroPoblado(EditUbiCP){
                 if (result) {
                     //console.log(lyrCentrosPobladosEdicion);
                     lyrCentrosPobladosEdicion.updateFeature(EditUbiCP.features[0], function (error, featureCollection, response2) {
+                        waitingDialog.hide();
                         //console.log(featureCollection);
                         if (featureCollection.success == true) {
                             MapearCentroPobladoEli();
@@ -432,6 +437,7 @@ function EditCentroPoblado(EditUbiCP){
             action: function (dialog) {
                 typeof dialog.getData('callback') === 'function' && dialog.getData('callback')(true);
                 dialog.close();
+                waitingDialog.show();
             }
         }]
     });
@@ -671,6 +677,7 @@ function AprobarCentroPoblado(id_feature) {
                                         lyrCentrosPobladosVV.addFeature(FeatureCentroPobladoVV,function (error, featureCollectionVV) {
                                             MapearCentroPobladoEli();
                                             MapearCentroPobladoTotal();
+                                            
                                             msj_exito("Se APROBO el Sitio Upme a Energizar exitosamente!");
                                             return true;
                                         });
@@ -698,6 +705,7 @@ function AprobarCentroPoblado(id_feature) {
                 action: function (dialog) {
                     typeof dialog.getData('callback') === 'function' && dialog.getData('callback')(true);
                     dialog.close();
+                    waitingDialog.show();
                 }
             }]
         });
